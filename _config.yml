@@ -8,10 +8,10 @@ theme: jekyll-theme-chirpy
 baseurl: ''
 
 # the HTML language tag › https://www.w3.org/International/questions/qa-choosing-language-tags
-lang: en-US
+lang: ru
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
+timezone: Europe/Kiev
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
@@ -41,8 +41,8 @@ social:
     - https://twitter.com/vkhambir      # change to your twitter homepage
     - https://github.com/khambir       # change to your github homepage
     # Uncomment below to add more social links
-    - https://www.facebook.com/vladislav.khambir
-    - https://www.linkedin.com/in/khambir
+    - https://facebook.com/vladislav.khambir
+    - https://linkedin.com/in/khambir
 
 google_site_verification: google_meta_tag_verification # change to your verification string
 # --------------------------
