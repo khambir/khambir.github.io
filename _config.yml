@@ -11,38 +11,40 @@ baseurl: ''
 lang: en-US
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Europe/Kiev
+timezone: Asia/Shanghai
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Влад Хамбир                     # the main title
+title: Chirpy                          # the main title
 
-tagline: iOS Developer   # it will display as the sub-title
+tagline: A text-focused Jekyll theme   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Vlad Khambir iOS Blog
+  A minimal, portfolio, sidebar,
+  bootstrap Jekyll theme with responsive web design
+  and focuses on text presentation.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://khambir.github.io'
 
 github:
-  username: khambir             # change to your github username
+  username: github_username             # change to your github username
 
 twitter:
-  username: vkhambir            # change to your twitter username
+  username: twitter_username            # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Влад Хамбир
-  email: vlad.khambir@gmail.com             # change to your email address
+  name: your_full_name
+  email: example@doamin.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/vkhambir      # change to your twitter homepage
-    - https://github.com/khambir       # change to your github homepage
+    - https://twitter.com/username      # change to your twitter homepage
+    - https://github.com/username       # change to your github homepage
     # Uncomment below to add more social links
-    - https://www.facebook.com/vladislav.khambir
-    - https://www.linkedin.com/in/khambir
+    # - https://www.facebook.com/username
+    # - https://www.linkedin.com/in/username
 
 google_site_verification: google_meta_tag_verification # change to your verification string
 # --------------------------
@@ -112,7 +114,7 @@ defaults:
       type: posts
     values:
       layout: post
-      comments: false    # Enable comments in posts.
+      comments: true    # Enable comments in posts.
       toc: true         # Display TOC column in posts.
       # DO NOT modify the following parameter unless you are confident enough
       # to update the code of all other post links in this project.
