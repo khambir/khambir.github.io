@@ -17,7 +17,7 @@ timezone: Europe/Kiev
 # --------------------------
 title: Vlad Khambir                          # the main title
 
-tagline: Мир глазами iOS разработчика   # it will display as the sub-title
+tagline: 'Мир глазами iOS разработчика'   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Vlad Khambir, iOS Developer
