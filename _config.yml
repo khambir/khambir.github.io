@@ -15,9 +15,9 @@ timezone: Asia/Shanghai
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Vlad Khambir                          # the main title
+title: Chirpy                          # the main title
 
-tagline: iOS Dev 2   # it will display as the sub-title
+tagline: A text-focused Jekyll theme   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
@@ -46,6 +46,16 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
+google_site_verification: google_meta_tag_verification # change to your verification string
+# --------------------------
+
+google_analytics:
+  id: ''              # fill in your Google Analytics ID
+  # Google Analytics pageviews report settings
+  pv:
+    proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
+    cache_path:       # the local PV cache data, friendly to visitors from GFW region
+
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,
@@ -57,7 +67,7 @@ social:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: ''  # [light|dark]
+theme_mode:  '' # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
