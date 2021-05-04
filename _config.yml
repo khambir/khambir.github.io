@@ -39,7 +39,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/vkhambir      # change to your twitter homepage
-    - https://github.com/khambir       # change to your github homepage
+    - https://github.com/RxSwiftCommunity/RxLocalizer       # change to your github homepage
     # Uncomment below to add more social links
     - https://facebook.com/vladislav.khambir
     - https://linkedin.com/in/khambir
