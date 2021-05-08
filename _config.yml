@@ -23,7 +23,7 @@ description: >-                        # used by seo meta and the atom feed
   Vlad Khambir, iOS Developer
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://khambir.github.io'
+url: 'https://vladkhambir.com'
 
 github:
   username: khambir             # change to your github username
@@ -39,7 +39,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/vkhambir      # change to your twitter homepage
-    - https://github.com/RxSwiftCommunity/RxLocalizer       # change to your github homepage
+    - https://github.com/khambir       # change to your github homepage
     # Uncomment below to add more social links
     - https://facebook.com/vladislav.khambir
     - https://linkedin.com/in/khambir
