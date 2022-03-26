@@ -1,5 +1,5 @@
 ---
-title: Code review. Все что нужно знать.
+title: Code review. Всё, что нужно знать.
 date: 2021-05-25 20:00:00 +0000
 categories: [Практики]
 tags: [code review, practices, styleguide]
