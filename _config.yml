@@ -8,7 +8,7 @@ theme: jekyll-theme-chirpy
 baseurl: ''
 
 # the HTML language tag › https://www.w3.org/International/questions/qa-choosing-language-tags
-lang: ru
+lang: en
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Europe/Kiev
@@ -17,7 +17,7 @@ timezone: Europe/Kiev
 # --------------------------
 title: Vlad Khambir 🚀                         # the main title
 
-tagline: 'Мир глазами iOS разработчика'   # it will display as the sub-title
+tagline: 'The world through the eyes of an iOS developer'   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Vlad Khambir, iOS Developer
