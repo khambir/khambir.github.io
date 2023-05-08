@@ -1,65 +1,63 @@
 ---
-title: 5 причин почему тебе нужен pet-проект
+title: 5 reasons why you need a pet project
 date: 2021-09-02 21:00:00 +0000
 categories: [IT-Проекты]
 tags: [pet-project, digital маркетинг]
 ---
-Pet-проект - это, как правило, индивидуальный проект, который ты делаешь в свободное время, холишь, лелеешь и растишь его словно своего домашнего питомца 🐶
+Pet-project is usually an individual project that you work on in your free time, care for, nurture, and grow like your own pet 🐶
 
-У меня будет всего 700 слов, чтобы убедить тебя в том, что pet-проект - это полезно и весело. Если хочешь сделать чтение более увлекательным - выпивай бокал ~~вина~~ воды каждый раз, когда читаешь фразу "Pet-проект" 🤪
+I have only 800 words to convince you that pet projects are useful and fun.
 
-Стартуем 🔫
+Let's get started 🚀
 
-На данный момент у меня есть два pet-проекта. [Один из них](https://apps.apple.com/ua/app/medkrok/id1515141600) я отправил на конкурс, который проводило издание [Highload](https://highload.today). И знаешь что? Я занял первое место 😳
+At the moment, I have two pet projects. [One of them](https://apps.apple.com/ua/app/medkrok/id1515141600) I submitted to a competition organized by Highload. And you know what? I took first place 😳
 
-Эмоции, которые меня наполнили после [оглашения результатов конкурса](https://mc.today/my-sobrali-20-lichnyh-proektov-razrabotchikov-na-konkurs-uznajte-kto-pobedil-i-vyigral-iphone/) стремительно побудили во мне желание написать эту статью и поделиться с тобой причинами почему тебе тоже нужен свой pet-проект.
+The emotions that filled me after [the announcement of the competition results](https://mc.today/my-sobrali-20-lichnyh-proektov-razrabotchikov-na-konkurs-uznajte-kto-pobedil-i-vyigral-iphone/) quickly prompted me to write this article and share with you the reasons why you need your pet project too.
 
-# Причина №1. Pet-проект - это свобода.
+# Reason №1: Pet projects offer freedom
 
-На работе есть заказчик, менеджер, маркетолог, тим-лид, а на твоем pet-проекте есть только ты, представляешь? Не тебе ставят задачи, а ты их ставишь сам(а) себе. Не заказчик навязывает тебе идею, а ты можешь придумать её сам(а). Не лид указывает какой стек технологий стоит использовать, а ты сам(а) выбираешь материалы из которого построишь своё творение.
+At work, you have a boss, a client, a team leader, and other stakeholders to answer to. But with a pet project, you're in charge. You set the goals, define the tasks, and decide which technologies to use. This freedom can be liberating and allows you to explore your creative side.
 
-Ты получишь максимальное удовольствие от гибкости разработки и идеи, есть только одно ограничение - твоё воображение.
+With a pet project, you have complete control. You get to work on something that you're passionate about, and you get to do it on your own terms.
 
-> Свобода во всем - так бы я описал свои pet-проекты.
+> Freedom in everything - this is how I would describe my pet projects.
 
-# Причина №2. Стремительное развитие самого себя.
+# Reason №2: Pet projects can help you learn and grow
 
-Первый плюс - свобода. Именно свобода позволяет тебе использовать для своего pet-проекта самые последние технологии. Да, многие вещи могут быть еще в Beta, но для тебя это не помеха 😉
+The first advantage is freedom which allows you to use the latest technologies for your pet project. Yes, many things may still be in beta, but that won't stop you 😉
 
-Бери и используй самые новые фреймворки, языки, экспериментируй с архитектурой, попробуй то, что другие еще боятся попробовать. Это даст тебе уникальные знания, способность быть в тренде, использовать приобретенные знания и навыки для основной работы. Ты можешь стать экспертом в тех технологиях, которые станут мейнстримом в будущем.
+Take and use the newest frameworks, and languages, experiment with architecture, and try what others are still afraid to try. This will give you unique knowledge, the ability to be on trend, and use new knowledge and skills for your main job. You can become an expert in technologies that will become mainstream in the future.
 
-Нет ограничений - используй это для саморазвития и получения уникального опыта, чего не могут позволить себе остальные.
+There are no limitations - use it for self-development and gaining unique experience that others cannot afford.
 
-# Причина №3. Построение личностного бренда.
+# Reason №3: Pet projects can help you build your personal brand
 
-Если планируешь раскрутить личностный бренд - pet-проект идеально подходит для достижения этой цели.
+If you're interested in building your personal brand, a pet project can be a great way to do it. By working on something you're passionate about, you can demonstrate your skills and expertise to the world.
 
-У меня есть знакомые, которых знают из-за их репозиториев и количества звездочек на GitHub-е. Мой pet-проект позволил мне занять первое место на конкурсе, дать [свое первое интервью](https://highload.today/studenty-sprashivali-kuda-skinut-dengi-chtoby-otblagodarit-kak-pet-proekt-prines-ukrainskomu-razrabotchiku-priznanie-i-popal-v-top-app-store/).
+For example, you could create a GitHub repository for your pet project and share it with others. This can help you gain recognition in your field, and it can also help you build a network of like-minded individuals.
 
-Наличие pet-проекта может поднять твою медийность и узнаваемость в узких, но нужных для тебя кругах. Такая самореклама позволит легче найти работу, которая будет тебе по душе. По правде, не ты будешь искать, а тебя будут искать по твоему репозиторию или статье о тебе в интернете 💪
+My pet project allowed me to take first place in the competition and give [my first interview](https://highload.today/studenty-sprashivali-kuda-skinut-dengi-chtoby-otblagodarit-kak-pet-proekt-prines-ukrainskomu-razrabotchiku-priznanie-i-popal-v-top-app-store/).
 
-# Причина №4. Дополнительный доход.
+# Reason №4. Additional income.
 
-Ты еще не забыл(а) первую причину? 😏
+You can design a product that will be interesting not only to you from a technical point of view, but will also find its consumer. Naturally, users of your wonderful creation will happily support you financially if you offer something interesting in return.
 
-Я напомню: Pet-проект - это свобода. Именно свобода позволит тебе создать источник дополнительного дохода. Можно спроектировать продукт, который будет интересен не только тебе с технической точки зрения, а и найдёт своего потребителя. Естественно, пользователи твоего замечательного творения с радостью помогут тебе монетой, если ты предложишь что-то интересное взамен.
+I created an application that was in the top 10 in the Education section of the App Store. My product is completely free and without ads, but even that didn't stop users from asking me where they could donate money 🤯
 
-Я создал приложение, которое попадало в топ-10 App Store в разделе Education. Мой продукт совершенно бесплатный и без рекламы, но даже это не останавливает пользователей, которые сами писали мне с вопросом "Куда скинуть деньги в качестве благодарности?" 🤯
+If you suddenly decide to create a project to make money, you will need knowledge about [digital marketing](https://www.vladkhambir.com/posts/digital-marketing-for-engineers/), which I have already written about on my blog 😉
 
-Если вдруг надумаешь создавать проект для заработка денег, тебе точно нужны будут знания о [digital маркетинге](https://www.vladkhambir.com/posts/digital-marketing-for-engineers/) о котором я уже писал в своем блоге 😉
+# Reason №5. Your portfolio will never be empty again.
 
-# Причина №5. Твоё портфолио уже никогда не будет пустым.
+At work, you often need to sign a [non-disclosure agreement (NDA)](https://en.wikipedia.org/wiki/Non-disclosure_agreement). This agreement prohibits you from sharing details of implementation or even the fact that you worked on a particular project. You can work on something cool for a long time, but your portfolio will still be empty.
 
-Часто на работе тебе нужно подписать [документ о неразглашении (NDA)](https://ru.wikipedia.org/wiki/Соглашение_о_неразглашении). Это соглашение запрещает тебе делиться деталями реализации или даже фактом работы над каким-то проектом. Ты можешь долгое время работать над чем-то крутым, а твоё портфолио все так же останется пустым.
+Guess what the solution is... 😏
 
-Угадай какое решение... 😏
+That's right - create your pet project, work on it in your free time, and add it to your portfolio. Sometimes, you can even share the source code and use it instead of completing a test task when getting hired.
 
-Верно - создать свой pet-проект, заниматься им в свободное от работы время и включить его в свое портфолио. Иногда, ты даже сможешь поделиться исходным кодом и использовать его вместо выполнения тестового задания при трудоустройстве.
+# Conclusion 🔑
 
-# Заключение 🔑
+It doesn't matter whether your pet project is successful or not, you will gain unique experience, try something new, and raise the level of your professional skills, which will help advance your career.
 
-Абсолютно неважно будет ли твой pet-проект успешен или нет, в любом случае ты получишь уникальный опыт, попробуешь что-то новое, поднимешь уровень своих профессиональных навыков, что безусловно поможет продвинуть твою карьеру вперёд.
+# Where to go next? 🛣
 
-# Куда дальше? 🛣
-
-Подумай над тем, чего бы ты хотел(а) научиться? Возможно давно есть желание попробовать что-то новое? Может у тебя есть уникальная идея? Думаю самое время воплотить желаемое в жизнь, создав свой pet-проект 🙌
+Think about what you would like to learn. Perhaps you have long wanted to try something new. Maybe you have a unique idea? I think it's time to bring your desires to life by creating your pet project 🙌
