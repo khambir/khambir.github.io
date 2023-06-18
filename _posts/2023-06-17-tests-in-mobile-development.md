@@ -1,5 +1,5 @@
 ---
-title: Enhancing Mobile App Quality: Testing
+title: Enhancing Mobile App Quality. The Importance of Testing.
 date: 2023-06-17 19:00:00 +0000
 categories: [Tests, Survey]
 tags: [Tests, Mobile, End-to-End, Unit, Survey]
