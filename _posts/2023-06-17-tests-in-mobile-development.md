@@ -5,13 +5,16 @@ categories: [Tests, Survey]
 tags: [Tests, Mobile, End-to-End, Unit, Survey]
 ---
 Testing plays a vital role in ensuring the quality and reliability of mobile apps. By thoroughly testing the software during the development process, mobile software developers can identify and address issues early, leading to a more stable and user-friendly application.
+
 In this article, we will explore the results of a survey conducted among mobile software developers. We will delve into the reasons for writing tests and an overview of different test types.
 
 # 📊 Survey Results
 I conducted a survey of over 50 mobile developers to learn about their testing practices in their projects.
 
 ![Do you write tests](/assets/img/posts/tests_in_mob_dev/survey_results_do_you_write_tests.png)
-The results showed that 55% of the surveyed developers do not write tests, while the other 45% believed it is important. When asked why they do not write tests, the main reasons cited were:
+The results showed that 55% of the surveyed developers do not write tests, while the other 45% believed it is important. 
+
+When asked why they do not write tests, the main reasons cited were:
 * ⏰ Lack of sufficient time to dedicate to writing and maintaining tests.
 * 👎 The perception that their current codebase is unsuitable for effective testing.
 * 🔃 Frequent code changes that make maintaining tests challenging.
@@ -20,11 +23,12 @@ The results showed that 55% of the surveyed developers do not write tests, while
 
 ![Code coverage](/assets/img/posts/tests_in_mob_dev/survey_results_test_coverage.png)
 The second question in the survey focused on code coverage, revealing that a significant number of developers had low code coverage, with only a few achieving coverage above 80%. In fact, the majority of respondents had a code coverage level of merely 10%.
+
 To further explore this aspect, I posed additional questions to developers with less than 10% code coverage and those with more than 80% code coverage.
 For developers with less than 10% coverage, I asked: What areas do you cover in testing? Their responses shed light on the following:
-1. Critical functionality: These developers prioritize testing critical functionalities of the app, such as onboarding processes and payment systems. These components are crucial for ensuring a seamless user experience and require thorough validation.
-2. Difficult logic: Testing efforts extend to challenging and complex logic areas of the codebase, including parsers, calculations, algorithms, and other intricate components that significantly contribute to the app’s functionality.
-3. Business logic: Developers also focus on testing the business logic of the app, encompassing view models and use cases. These components represent the core functionalities and workflows of the application.
+1. **Critical functionality**: These developers prioritize testing critical functionalities of the app, such as onboarding processes and payment systems. These components are crucial for ensuring a seamless user experience and require thorough validation.
+2. **Difficult logic**: Testing efforts extend to challenging and complex logic areas of the codebase, including parsers, calculations, algorithms, and other intricate components that significantly contribute to the app’s functionality.
+3. **Business logic**: Developers also focus on testing the business logic of the app, encompassing view models and use cases. These components represent the core functionalities and workflows of the application.
 
 Conversely, developers with more than 80% code coverage were asked about the areas they do not cover. Their responses included the following:
 1. [Humble Objects](https://www.vladkhambir.com/posts/humble-object/): These developers mentioned that they do not write tests specifically for Humble Objects, which are minimalistic and decoupled classes popularized by Uncle Bob (Robert C. Martin) in his book. Humble Objects handle low-level details and interactions and are isolated from the complexities of the system.
@@ -43,18 +47,18 @@ In summary, testing shares key advantages with road markings. It reduces the cha
 
 ### Other Benefits of Tests:
 Writing tests brings several benefits to mobile software development:
-* 🏎️ Development speed: Tests catch errors early, allowing developers to fix problems promptly and maintain a faster development pace.
-* ✅ Safe refactoring: Tests act as a safety net during code refactoring, ensuring that changes do not introduce regressions or unintended consequences.
-* 🐞 Early detection of bugs: Tests help identify issues and unexpected behavior early in the development cycle, enabling developers to address them promptly and reduce debugging efforts later on.
-* 📈 Better code quality: Writing tests encourages cleaner and more maintainable code, leading to improved overall code quality.
-* 🙌 Reduced manual testing: Automated tests eliminate the need for extensive manual testing, saving time and effort while maintaining consistent and reliable results.
+* 🏎️ **Development speed**: Tests catch errors early, allowing developers to fix problems promptly and maintain a faster development pace.
+* ✅ **Safe refactoring**: Tests act as a safety net during code refactoring, ensuring that changes do not introduce regressions or unintended consequences.
+* 🐞 **Early detection of bugs**: Tests help identify issues and unexpected behavior early in the development cycle, enabling developers to address them promptly and reduce debugging efforts later on.
+* 📈 **Better code quality**: Writing tests encourages cleaner and more maintainable code, leading to improved overall code quality.
+* 🙌 **Reduced manual testing**: Automated tests eliminate the need for extensive manual testing, saving time and effort while maintaining consistent and reliable results.
 
 # 🎛️ Test Types Overview
 Testing in software development can be categorized into three types, represented by a pyramid
 ![Test types pyramid](/assets/img/posts/tests_in_mob_dev/test_types_pyramid.png)
-1. Unit Testing: Unit testing, comparable to testing individual components of a rocket like the fuel tank or combustion chamber, focuses on testing isolated units of code. It verifies that each unit performs correctly in isolation, catching bugs early on. Unit testing is efficient and cost-effective.
-2. Integration Testing: Similar to verifying the interaction between the fuel tank and combustion chamber, integration testing ensures that different components work together properly. It validates the communication and collaboration between units that have passed their individual tests.
-3. End-to-End Testing: End-to-end testing, analogous to launching a rocket to observe its behavior throughout the entire process, validates the entire system as a whole. It simulates real-life scenarios, including user interactions, and ensures seamless functionality across all components. End-to-end testing represents the highest level of testing and is comprehensive but can be more expensive to maintain.
+1. **Unit Testing**: Unit testing, comparable to testing individual components of a rocket like the fuel tank or combustion chamber, focuses on testing isolated units of code. It verifies that each unit performs correctly in isolation, catching bugs early on. Unit testing is efficient and cost-effective.
+2. **Integration Testing**: Similar to verifying the interaction between the fuel tank and combustion chamber, integration testing ensures that different components work together properly. It validates the communication and collaboration between units that have passed their individual tests.
+3. **End-to-End Testing**: End-to-end testing, analogous to launching a rocket to observe its behavior throughout the entire process, validates the entire system as a whole. It simulates real-life scenarios, including user interactions, and ensures seamless functionality across all components. End-to-end testing represents the highest level of testing and is comprehensive but can be more expensive to maintain.
 
 In summary, unit testing focuses on testing isolated units, integration testing verifies component interactions, and end-to-end testing validates the system as a whole, mirroring the stages of a rocket’s development and launch process.
 While the traditional testing pyramid emphasizes a larger base of unit tests and fewer end-to-end tests, some teams prioritize end-to-end testing more prominently. This approach, known as the inverted pyramid, ensures thorough validation of features before releasing them to end users.
