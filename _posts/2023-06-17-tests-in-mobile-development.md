@@ -10,7 +10,7 @@ In this article, we will explore the results of a survey conducted among mobile 
 # 📊 Survey Results
 I conducted a survey of over 50 mobile developers to learn about their testing practices in their projects.
 
-![Do you write tests](/assets/img/posts/tests_in_mob_dev/survey_results_do_you_write_tests.jpeg)
+![Do you write tests](/assets/img/posts/tests_in_mob_dev/survey_results_do_you_write_tests.png)
 The results showed that 55% of the surveyed developers do not write tests, while the other 45% believed it is important. When asked why they do not write tests, the main reasons cited were:
 * ⏰ Lack of sufficient time to dedicate to writing and maintaining tests.
 * 👎 The perception that their current codebase is unsuitable for effective testing.
@@ -18,7 +18,7 @@ The results showed that 55% of the surveyed developers do not write tests, while
 * ❌ Limited proficiency in writing comprehensive tests.
 * 🤖 Overreliance on end-to-end testing as a substitute for more granular testing practices.
 
-![Code coverage](/assets/img/posts/tests_in_mob_dev/survey_results_test_coverage.jpeg)
+![Code coverage](/assets/img/posts/tests_in_mob_dev/survey_results_test_coverage.png)
 The second question in the survey focused on code coverage, revealing that a significant number of developers had low code coverage, with only a few achieving coverage above 80%. In fact, the majority of respondents had a code coverage level of merely 10%.
 To further explore this aspect, I posed additional questions to developers with less than 10% code coverage and those with more than 80% code coverage.
 For developers with less than 10% coverage, I asked: What areas do you cover in testing? Their responses shed light on the following:
@@ -27,7 +27,7 @@ For developers with less than 10% coverage, I asked: What areas do you cover in 
 3. Business logic: Developers also focus on testing the business logic of the app, encompassing view models and use cases. These components represent the core functionalities and workflows of the application.
 
 Conversely, developers with more than 80% code coverage were asked about the areas they do not cover. Their responses included the following:
-1. Humble Objects: These developers mentioned that they do not write tests specifically for Humble Objects, which are minimalistic and decoupled classes popularized by Uncle Bob (Robert C. Martin) in his book. Humble Objects handle low-level details and interactions and are isolated from the complexities of the system.
+1. [Humble Objects](https://www.vladkhambir.com/posts/humble-object/): These developers mentioned that they do not write tests specifically for Humble Objects, which are minimalistic and decoupled classes popularized by Uncle Bob (Robert C. Martin) in his book. Humble Objects handle low-level details and interactions and are isolated from the complexities of the system.
 2. A/B tests: Another area not covered by these developers is A/B tests. Due to the potential for frequent changes, they opt not to write tests for this functionality, as it may undergo modifications in the near future.
 
 Based on these two answers, we can determine which areas to prioritize for test coverage in the absence of tests in our app and establish criteria for when to conclude our testing efforts.
@@ -51,21 +51,21 @@ Writing tests brings several benefits to mobile software development:
 
 # 🎛️ Test Types Overview
 Testing in software development can be categorized into three types, represented by a pyramid
-![Test types pyramid](/assets/img/posts/tests_in_mob_dev/test_types_pyramid.jpeg)
+![Test types pyramid](/assets/img/posts/tests_in_mob_dev/test_types_pyramid.png)
 1. Unit Testing: Unit testing, comparable to testing individual components of a rocket like the fuel tank or combustion chamber, focuses on testing isolated units of code. It verifies that each unit performs correctly in isolation, catching bugs early on. Unit testing is efficient and cost-effective.
 2. Integration Testing: Similar to verifying the interaction between the fuel tank and combustion chamber, integration testing ensures that different components work together properly. It validates the communication and collaboration between units that have passed their individual tests.
 3. End-to-End Testing: End-to-end testing, analogous to launching a rocket to observe its behavior throughout the entire process, validates the entire system as a whole. It simulates real-life scenarios, including user interactions, and ensures seamless functionality across all components. End-to-end testing represents the highest level of testing and is comprehensive but can be more expensive to maintain.
 
 In summary, unit testing focuses on testing isolated units, integration testing verifies component interactions, and end-to-end testing validates the system as a whole, mirroring the stages of a rocket’s development and launch process.
 While the traditional testing pyramid emphasizes a larger base of unit tests and fewer end-to-end tests, some teams prioritize end-to-end testing more prominently. This approach, known as the inverted pyramid, ensures thorough validation of features before releasing them to end users.
-![Test types inverted pyramid](/assets/img/posts/tests_in_mob_dev/test_types_inverted_pyramid.jpeg)
+![Test types inverted pyramid](/assets/img/posts/tests_in_mob_dev/test_types_inverted_pyramid.png)
 In my team, we prefer this type of pyramid. However, it is worth noting that the majority of mobile development teams typically adhere to the standard testing pyramid.
-![Survey results test type](/assets/img/posts/tests_in_mob_dev/survey_results_test_type.jpeg)
+![Survey results test type](/assets/img/posts/tests_in_mob_dev/survey_results_test_type.png)
 
 # 🎁 Bonus: Tools that we use in our team
 It is essential to leverage the right tools to streamline and optimize the testing process. Here are a few tools which used by our team:
-1. Code Generation: Code generation tools, such as [Sourcery](https://github.com/krzysztofzablocki/Sourcery) , automate the creation of fake data and mocks, making the testing process more efficient and reducing manual effort.
-2. Snapshot Testing: Snapshot testing tools like [Swift Snapshot Testing](https://github.com/pointfreeco/swift-snapshot-testing)  enable developers to capture screenshots of the user interface and compare them to previously saved snapshots. This technique helps identify unintended changes and ensures visual consistency across different app versions.
+1. Code Generation: Code generation tools, such as [Sourcery](https://github.com/krzysztofzablocki/Sourcery), automate the creation of fake data and mocks, making the testing process more efficient and reducing manual effort.
+2. Snapshot Testing: Snapshot testing tools like [Swift Snapshot Testing](https://github.com/pointfreeco/swift-snapshot-testing) enable developers to capture screenshots of the user interface and compare them to previously saved snapshots. This technique helps identify unintended changes and ensures visual consistency across different app versions.
 3.  [Appium](https://appium.io/docs/en/2.0/): Appium is an end-to-end testing tool that simulates user activities and verifies system behavior from a user’s perspective. It utilizes Espresso or UIAutomator2 for Android apps and XCUI for iOS apps. With a black box testing approach, Appium evaluates all relevant subsystems, including UI/UX, server, database, and dependencies.
 4. CI/CD Tools: [Fastlane](https://fastlane.tools/), [Danger](https://danger.systems/), and [Xcov](https://github.com/fastlane-community/xcov) automate various tasks related to building, testing, and deploying mobile apps. Fastlane enables script execution, Danger integrates with the code review process for analysis, and Xcov assesses code coverage using changes from pull requests.
 
