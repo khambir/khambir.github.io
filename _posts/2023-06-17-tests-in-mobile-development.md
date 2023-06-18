@@ -33,7 +33,7 @@ Conversely, developers with more than 80% code coverage were asked about the are
 Based on these two answers, we can determine which areas to prioritize for test coverage in the absence of tests in our app and establish criteria for when to conclude our testing efforts.
 
 # 🤔 Reasons to Write Tests
-![Reasons road](/assets/img/posts/tests_in_mob_dev/reasons_road.jpeg)
+![Reasons road](/assets/img/posts/tests_in_mob_dev/reasons_road.png)
 Just like road markings guide drivers and enhance safety, tests provide several benefits in software development. Let’s explore the parallels between road markings and testing, highlighting their shared pros.
 1. Increased Safety and Reduced Chances of Crashes: Road markings serve as visual cues that guide drivers, enhancing road safety and reducing the likelihood of accidents. Similarly, testing in software development minimizes the chances of errors or bugs, ensuring a stable and secure product. By thoroughly testing software, developers can identify and rectify potential issues, leading to a more robust and reliable application.
 2. Easy Adaptation for Drivers in New Roads: Road markings provide valuable information to drivers, especially when navigating unfamiliar roads. They offer clear guidance and help drivers adapt quickly to new surroundings. In a similar vein, tests in software development contribute to the smooth onboarding process for new team members. Well-written tests serve as documentation and examples, allowing new developers to understand the existing codebase more efficiently and make necessary modifications confidently.
