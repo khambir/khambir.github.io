@@ -62,7 +62,7 @@ While the traditional testing pyramid emphasizes a larger base of unit tests and
 In my team, we prefer this type of pyramid. However, it is worth noting that the majority of mobile development teams typically adhere to the standard testing pyramid.
 ![Survey results test type](/assets/img/posts/tests_in_mob_dev/survey_results_test_type.jpeg)
 
-# 🎁 Bonus: Tools which I use in our team
+# 🎁 Bonus: Tools that we use in our team
 It is essential to leverage the right tools to streamline and optimize the testing process. Here are a few tools which used by our team:
 1. Code Generation: Code generation tools, such as [Sourcery](https://github.com/krzysztofzablocki/Sourcery) , automate the creation of fake data and mocks, making the testing process more efficient and reducing manual effort.
 2. Snapshot Testing: Snapshot testing tools like [Swift Snapshot Testing](https://github.com/pointfreeco/swift-snapshot-testing)  enable developers to capture screenshots of the user interface and compare them to previously saved snapshots. This technique helps identify unintended changes and ensures visual consistency across different app versions.
