@@ -1,45 +1,45 @@
 ---
-title: Топ 5 программ для продуктивного разработчика
+title: Top 5 Programs for Productive Developers
 date: 2022-03-25 19:00:00 +0000
-categories: [Продуктивность]
-tags: [продуктивность, разработка, alfred, dash, proxyman, paw, drafts]
+categories: [Productivity]
+tags: [Productivity, development, alfred, dash, proxyman, paw, drafts]
 ---
-Каждый из нас ежедневно использует разное ПО, которое помогает делать нашу работу качественно и эффективно. Я подготовил свой топ программ, которые использую каждый день, буду рад, если ты найдёшь для себя что-то новое и полезное. Enjoy 😉
+Each of us uses various software daily to perform our work efficiently and effectively. I have prepared my top programs that I use every day, and I would be glad if you find something new and useful for yourself. Enjoy 😉
 
 ## [Alfred](https://www.alfredapp.com)
-Несомненно первое место в моём топе почётно занимает ~~помощник бетмена~~ Alfred. Если коротко, Альфред это приложение для запуска приложений. А вот платная версия этого продукта открывает новые возможности в виде Workflows. 
-Workflow позволяет заменить повторяющиеся задачи и значительно повысить продуктивность.
-Пример Workflow для быстрого запуска Xcode проекта:
+Undoubtedly, the first place in my top list is honored by Alfred. In short, Alfred is an application launcher. The paid version of this product offers new possibilities in the form of Workflows. 
+A Workflow allows you to automate repetitive tasks and significantly increase productivity.
+Here's an example Workflow for quickly launching an Xcode project:
 ![Alfred](/assets/img/posts/top_5_programs_for_dev_productivity/programs_productivity_1.png)
 
-Как использовать? С помощью Hotkey запускаем Alfred (он похож на Spotlight) и вводим ключевое слово для запуска Workflow - `xc` и название проекта, который хотите открыть. Одно нажатие на `Enter` и твой проект уже запущен 💥
+How to use it? Launch Alfred using a hotkey (it resembles Spotlight) and enter the keyword for launching the Workflow - xc followed by the name of the project you want to open. A single press of Enter, and your project is already launched 💥
 ![Alfred](/assets/img/posts/top_5_programs_for_dev_productivity/programs_productivity_2.png)
 
 ## [Dash](https://kapeli.com/dash)
-Профессиональный и опытный разработчик часто ищет ответы на свои вопросы в официальной документации для разных продуктов. Тебе бы хотелось, что бы вся нужная документация находились в одном месте? Тогда ты точно ищешь Dash 😉
+A professional and experienced developer often looks for answers to their questions in the official documentation for various products. Would you like to have all the necessary documentation in one place? Then you're definitely looking for Dash 😉
 ![Dash](/assets/img/posts/top_5_programs_for_dev_productivity/programs_productivity_3.png)
-Dash - это браузер документации API. Dash имеет доступ к документациям более чем 200 API.
-Как бонус, у Dash есть интеграция с Alfred ❤️
+Dash is an API documentation browser. Dash provides access to documentation for over 200 APIs.
+As a bonus, Dash integrates with Alfred ❤️
 ![Dash](/assets/img/posts/top_5_programs_for_dev_productivity/programs_productivity_4.png)
 
 ## [Proxyman](https://proxyman.io/)
-Proxyman - это нативное высокопроизводительное приложение для macOS, которое позволяет разработчикам с легкостью захватывать, проверять и управлять HTTP-запросами / ответами. Некий аналог Charles, только с гораздо более свежим интерфейсом. 
+Proxyman is a native high-performance macOS application that allows developers to easily capture, inspect, and manipulate HTTP requests/responses. It is similar to Charles Proxy, but with a much more modern interface.
 ![Proxyman](/assets/img/posts/top_5_programs_for_dev_productivity/programs_productivity_5.png)
 
-Proxyman позволяет перехватывать запросы, писать скрипты для обработки и подмены ответов от сервера. Есть встроенная простая инструкция настройки прокси для симуляторов iOS/Android и физических девайсов.
-Программа регулярно обновляется и пополняется множеством новых фичей 💪
+Proxyman enables you to intercept requests, write scripts to process and substitute server responses. It has a built-in simple guide for setting up proxies for iOS/Android simulators and physical devices.
+The program is regularly updated and enriched with numerous new features 💪
 
-## [Paw](https://paw.cloud)
-Paw — это HTTP-клиент, который я использую для тестирования и документации API. Этот клиент имеет удобный, нативный интерфейс, позволяет строить запросы, проверять ответы сервера, экспортировать API.
+## [Rapid API](https://paw.cloud)
+Rapid API is an HTTP client that I use for testing and documenting APIs. This client has a convenient, native interface that allows you to build requests, verify server responses, and export APIs.
 ![Paw](/assets/img/posts/top_5_programs_for_dev_productivity/programs_productivity_6.png)
 
-Это отличная альтернатива Postman. Paw гораздо удобнее и в разы быстрее своего главного конкурента и поддерживает кодогенерацию (может стать главным плюсом для некоторых).
-> Paw стоит денег, но каждую чёрную пятницу ребята раздают в своём твиттере свой продукт совершенно бесплатно без каких-либо ограничений. 
+It is an excellent alternative to Postman. Rapid API is much more convenient and significantly faster than its main competitor, and it supports code generation (which can be a major advantage for some).
+> Rapid API comes at a cost, but every Black Friday, the folks at Rapid API give away their product for free without any limitations through their Twitter account. 
 
 ## [Drafts](https://getdrafts.com)
-Drafts — это быстрые заметки, супер удобный редактор и синхронизация через облако. Простота этого продукта не сравнима ни с чем, именно это подкупило меня. Если мне нужно что-либо записать - первым делом я открываю Drafts.
-P.S. Бесплатной версии приложения хватает за глаза.
+Drafts is a quick note-taking app, a super convenient editor, and cloud synchronization. The simplicity of this product is unparalleled, and that's what attracted me to it. Whenever I need to jot something down, I open Drafts first.
+P.S. The free version of the app is more than sufficient.
 
-# Куда дальше? 🛣
-Я рассказал про инструменты, которые могут повысить эффективность твоей работы и решить рабочие задачи. Буду рад, если ты поделишься со мной списком своих любимых программ через [LinkedIn](https://www.linkedin.com/in/khambir/) или [Twitter](https://twitter.com/VKhambir).
-Я с радостью попробую их в бою и напишу вторую часть этой статьи уже с новыми инструментами 😉
+# What's next? 🛣
+I have shared about the tools that can increase the efficiency of your work and solve work-related tasks. I would be glad if you share your list of favorite programs with me via [LinkedIn](https://www.linkedin.com/in/khambir/) or [Twitter](https://twitter.com/VKhambir).
+I would be happy to try them out and write the second part of this article with new tools 😉
