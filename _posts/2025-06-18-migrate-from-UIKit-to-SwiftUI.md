@@ -5,15 +5,17 @@ categories: [iOS Development, Architecture]
 tags: [SwiftUI, UIKit, Design System, UIHostingController, ViewRepresentable, Snapshot Testing, Swift]
 ---
 Switching to SwiftUI in a large codebase can feel risky. But remember how we once moved from Objective-C to Swift? From RxSwift to Combine? Now it's time to move from UIKit to SwiftUI.
-In this article, I’ll share my migration strategy called From Leaves to Roots, explain the benefits of SwiftUI, and give practical advice for managing the transition inside a team.
+In this article, I’ll share my migration strategy called From Leaves to Root, explain the benefits of SwiftUI, and give practical advice for managing the transition inside a team.
 # Why SwiftUI
 SwiftUI is a modern UI framework designed to replace UIKit. Here are a few key reasons to move forward:
 * Declarative syntax that makes UI easier to reason about
 * Smaller and cleaner codebase with better readability
 * Growing support from Apple
-# Migration Strategy: From Leaves to Roots
+
+# Migration Strategy: From Leaves to Root
 ![](/assets/img/posts/migrate_from_UIKit_to_SwiftUI/migration_path.png)
-Every app consists of features, each feature includes screens, and every screen has multiple subviews. That’s where the idea *From Leaves to Roots* comes from.
+
+Every app consists of features, each feature includes screens, and every screen has multiple subviews. That’s where the idea From Leaves to Root comes from.
 1. Start with subview - these are the easiest to migrate and reuse.
 2. Then migrate individual screens that use these subviews.
 3. Once screens are ready, group them into features or user flows.
@@ -26,6 +28,7 @@ Two techniques help:
 * Use [UIHostingController](https://developer.apple.com/documentation/swiftui/uihostingcontroller) to wrap SwiftUI views and use them inside UIKit.
 * Use [UIViewRepresentable](https://developer.apple.com/documentation/swiftui/uiviewrepresentable) or [UIViewControllerRepresentable](https://developer.apple.com/documentation/swiftui/uiviewcontrollerrepresentable) to wrap UIKit components for SwiftUI.
 ![](/assets/img/posts/migrate_from_UIKit_to_SwiftUI/swiftui_uikit_wrappers.png)
+
 This compatibility layer will allow you to slowly introduce SwiftUI components into the existing codebase.
 
 ## Example: Migrating a Custom Button from UIKit to SwiftUI
@@ -122,7 +125,7 @@ The good news: you don’t need to rewrite all your tests.
 Because SwiftUI supports accessibility identifiers just like UIKit, you can reuse your existing UI tests. This reduces regression risks and gives confidence that your migration didn’t break the user experience.
 ```swift
 Button("Login") {
-	// action
+  // action
 }
 .accessibilityIdentifier("login_button")
 
