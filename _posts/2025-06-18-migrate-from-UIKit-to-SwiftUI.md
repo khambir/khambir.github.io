@@ -5,7 +5,7 @@ categories: [iOS Development, Architecture]
 tags: [SwiftUI, UIKit, Design System, UIHostingController, ViewRepresentable, Snapshot Testing, Swift]
 ---
 Switching to SwiftUI in a large codebase can feel risky. But remember how we once moved from Objective-C to Swift? From RxSwift to Combine? Now it's time to move from UIKit to SwiftUI.
-In this article, I’ll share my migration strategy called *From Leaves to Roots*, explain the benefits of SwiftUI, and give practical advice for managing the transition inside a team.
+In this article, I’ll share my migration strategy called From Leaves to Roots, explain the benefits of SwiftUI, and give practical advice for managing the transition inside a team.
 # Why SwiftUI
 SwiftUI is a modern UI framework designed to replace UIKit. Here are a few key reasons to move forward:
 * Declarative syntax that makes UI easier to reason about
@@ -27,7 +27,8 @@ Two techniques help:
 * Use [UIViewRepresentable](https://developer.apple.com/documentation/swiftui/uiviewrepresentable) or [UIViewControllerRepresentable](https://developer.apple.com/documentation/swiftui/uiviewcontrollerrepresentable) to wrap UIKit components for SwiftUI.
 ![](/assets/img/posts/migrate_from_UIKit_to_SwiftUI/swiftui_uikit_wrappers.png)
 This compatibility layer will allow you to slowly introduce SwiftUI components into the existing codebase.
-# Example: Migrating a Custom Button from UIKit to SwiftUI
+
+## Example: Migrating a Custom Button from UIKit to SwiftUI
 Let’s say you have a custom button in your design system. Right now, it’s written with UIKit and used only in UIKit screens.
 This is a great candidate for starting migration; it’s a reusable view, a classic "leaf" in the UI tree.
 ### Step 1: Create a Shared Configuration
@@ -84,6 +85,7 @@ class CustomButtonView: UIView {
 }
 ```
 This class allows you to use the new SwiftUI button in any UIKit screen by simply passing the same shared configuration.
+
 ### Summary
 With this pattern:
 * SwiftUI screens use `CustomButton` directly
@@ -134,7 +136,8 @@ To improve trust in your previews:
 * Add snapshot tests to track changes
 * Use snapshots to detect unwanted UI modifications
 * Treat snapshots as a safety net for design consistency
-![](/assets/img/posts/migrate_from_UIKit_to_SwiftUI/url.png)<!-- {"width":372} -->
+![](/assets/img/posts/migrate_from_UIKit_to_SwiftUI/url.png)
+
 This approach will help you maintain accurate previews and avoid last-minute surprises in production.
 # Conclusion
 Migrating to SwiftUI is a big step, but with the right strategy, it becomes manageable. Start with subviews, build your foundation, and move step-by-step toward the full transition.
