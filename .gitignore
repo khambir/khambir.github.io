@@ -13,3 +13,6 @@ Gemfile.lock
 # npm dependencies
 node_modules
 package-lock.json
+
+# local reports
+swift-package-index-reports/

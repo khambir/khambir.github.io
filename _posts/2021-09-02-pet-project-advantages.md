@@ -2,7 +2,8 @@
 title: 5 reasons why you need a pet project
 date: 2021-09-02 21:00:00 +0000
 categories: [IT-Проекты]
-tags: [pet-project, digital маркетинг]
+tags: [Career]
+description: "Freedom, learning, personal brand, additional income, portfolio: five reasons your side project is worth it."
 ---
 Pet-project is usually an individual project that you work on in your free time, care for, nurture, and grow like your own pet 🐶
 

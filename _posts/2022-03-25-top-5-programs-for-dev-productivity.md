@@ -2,7 +2,8 @@
 title: Top 5 Programs for Productive Developers
 date: 2022-03-25 19:00:00 +0000
 categories: [Productivity]
-tags: [Productivity, development, alfred, dash, proxyman, paw, drafts]
+tags: [Tools, Productivity]
+description: "The tools I actually use every day: Alfred, Dash, Proxyman, Rapid API, and Drafts."
 ---
 Each of us uses various software daily to perform our work efficiently and effectively. I have prepared my top programs that I use every day, and I would be glad if you find something new and useful for yourself. Enjoy 😉
 

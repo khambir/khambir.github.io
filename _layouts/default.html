@@ -1,51 +1,51 @@
----
-layout: compress
-# Default layout
----
-
 <!DOCTYPE html>
-
-{% capture prefer_mode %}
-  {% if site.theme_mode %}
-    mode="{{ site.theme_mode }}"
+<html lang="{{ site.lang | default: 'en' }}" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  {% seo %}
+  {% feed_meta %}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/favicons/apple-touch-icon.png' | relative_url }}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicons/favicon-32x32.png' | relative_url }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicons/favicon-16x16.png' | relative_url }}" />
+  <link rel="manifest" href="{{ '/assets/img/favicons/site.webmanifest' | relative_url }}" />
+  <link rel="shortcut icon" href="{{ '/assets/img/favicons/favicon.ico' | relative_url }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
   {% endif %}
-{% endcapture %}
+</head>
+<body>
+  <nav>
+    <a href="{{ '/' | relative_url }}" class="nav-logo">VK<span>.</span></a>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+    </div>
+  </nav>
 
-<html lang="{{ site.lang | default: "en-US" }}" {{ prefer_mode }}>
+  {{ content }}
 
-  {% include head.html %}
-
-  <body data-spy="scroll" data-target="#toc">
-
-    {% include sidebar.html %}
-
-    {% include topbar.html %}
-
-    <div id="main-wrapper">
-      <div id="main">
-
-        {% include refactor-content.html content=content %}
-
-        {% include footer.html %}
-
+  <footer>
+    <div class="wrapper">
+      <div class="footer-inner">
+        <span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
+        <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
       </div>
+    </div>
+  </footer>
 
-      {% include search-results.html %}
-
-    </div> <!-- #main-wrapper -->
-
-    {% if page.mermaid %}
-      {% include mermaid.html %}
-    {% endif %}
-
-    <div id="mask"></div>
-
-    <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    {% include search-loader.html %}
-
-  </body>
-
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
 </html>

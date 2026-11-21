@@ -2,10 +2,11 @@
 title: Digital маркетинг. Шпаргалка для инженеров 🧑‍💻
 date: 2021-05-06 19:00:00 +0000
 categories: [Шпаргалки, Маркетинг]
-tags: [шпаргалка, roi, arpu, retention, ltv, digital маркетинг]
+tags: [Marketing]
 image:
-    src: /assets/img/posts/marketing/marketing_header.png
+    path: /assets/img/posts/marketing/marketing_header.png
     alt: Финансовые и маркетинговые термины/метрики
+description: "ROI, ARPU, LTV, Retention, Funnel: маркетинговые метрики, которые нужно знать инженеру в продуктовой компании."
 ---
 Обычный митинг в продуктовой IT компании в котором принимаю участие программисты, QA и аналитики с маркетологами. Последние часто бросаются какими-то аббревиатурами, объясняя как у нашего продукта идут дела.
 

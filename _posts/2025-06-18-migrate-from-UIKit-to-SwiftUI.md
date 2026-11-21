@@ -2,7 +2,8 @@
 title: How to Migrate from UIKit to SwiftUI in Large Projects
 date: 2025-06-18 19:00:00 +0000
 categories: [iOS Development, Architecture]
-tags: [SwiftUI, UIKit, Design System, UIHostingController, ViewRepresentable, Snapshot Testing, Swift]
+tags: [SwiftUI, UIKit]
+description: "A practical guide to moving your existing UIKit codebase towards SwiftUI, step by step, using the \"From Leaves to Root\" strategy."
 ---
 Switching to SwiftUI in a large codebase can feel risky. But remember how we once moved from Objective-C to Swift? From RxSwift to Combine? Now it's time to move from UIKit to SwiftUI.
 In this article, I’ll share my migration strategy called From Leaves to Root, explain the benefits of SwiftUI, and give practical advice for managing the transition inside a team.

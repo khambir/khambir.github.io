@@ -2,7 +2,8 @@
 title: Удаленка VS офис 🥊
 date: 2021-07-10 19:00:00 +0000
 categories: [Soft-skills]
-tags: [remote, office, work-life-balance]
+tags: [Career, Work-Life]
+description: "Мысли интроверта о плюсах и минусах удалённой работы, и почему гибридный режим лучше всего."
 ---
 
 Всем привет, меня зовут Влад и я интроверт.

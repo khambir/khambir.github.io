@@ -1,9 +1,9 @@
 ---
-layout: post
 title: "Using Windsurf Workflows to Automate the Software Development Lifecycle"
 date: 2025-12-26 19:00:00 +0000
 categories: [development]
-tags: [Windsurf workflows, automation, engineering]
+tags: [AI, Automation]
+description: "How Windsurf Workflows can be structured to automate common development tasks and why context management becomes a critical factor at scale."
 ---
 
 AI tools are already part of everyday software development. Most teams use them for code completion, quick refactoring, or documentation lookup. However, the real productivity gains appear when AI is applied not to isolated prompts, but to **repeatable engineering workflows**.
