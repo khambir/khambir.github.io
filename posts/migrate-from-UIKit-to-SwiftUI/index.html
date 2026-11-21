@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>How to Migrate from UIKit to SwiftUI in Large Projects | Vlad Khambir</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="How to Migrate from UIKit to SwiftUI in Large Projects" />
+<meta name="author" content="Vlad Khambir" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="A practical guide to moving your existing UIKit codebase towards SwiftUI, step by step, using the “From Leaves to Root” strategy." />
+<meta name="twitter:description" property="og:description" content="A practical guide to moving your existing UIKit codebase towards SwiftUI, step by step, using the “From Leaves to Root” strategy." />
+<link rel="canonical" href="https://www.vladkhambir.com/posts/migrate-from-UIKit-to-SwiftUI/" />
+<meta property="og:url" content="https://www.vladkhambir.com/posts/migrate-from-UIKit-to-SwiftUI/" />
+<meta property="og:site_name" content="Vlad Khambir" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-18T15:00:00-04:00" />
+<meta property="article:modified_time" content="2025-06-18T15:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="How to Migrate from UIKit to SwiftUI in Large Projects" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vlad Khambir"},"dateModified":"2025-06-18T15:00:00-04:00","datePublished":"2025-06-18T15:00:00-04:00","description":"A practical guide to moving your existing UIKit codebase towards SwiftUI, step by step, using the “From Leaves to Root” strategy.","headline":"How to Migrate from UIKit to SwiftUI in Large Projects","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.vladkhambir.com/posts/migrate-from-UIKit-to-SwiftUI/"},"url":"https://www.vladkhambir.com/posts/migrate-from-UIKit-to-SwiftUI/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://www.vladkhambir.com/feed.xml" title="Vlad Khambir" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest" />
+  <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRLH8JT200"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KRLH8JT200');
+  </script>
+  
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">VK<span>.</span></a>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+    </div>
+  </nav>
+
+  
+
+
+<article class="post-view">
+  <div class="wrapper">
+    <a class="back-btn" href="/#writing">← Back to all posts</a>
+    <header class="post-header">
+      <div class="card-tags"><span class="card-tag">SwiftUI</span><span class="card-tag">UIKit</span></div>
+
+      <h1>How to Migrate from UIKit to SwiftUI in Large Projects</h1>
+      <div class="post-meta-row">
+        <time datetime="2025-06-18T15:00:00-04:00">Jun 18, 2025</time>
+        <span class="post-meta-dot"></span>
+        <span>4 min read</span>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>Switching to SwiftUI in a large codebase can feel risky. But remember how we once moved from Objective-C to Swift? From RxSwift to Combine? Now it’s time to move from UIKit to SwiftUI.
+In this article, I’ll share my migration strategy called From Leaves to Root, explain the benefits of SwiftUI, and give practical advice for managing the transition inside a team.</p>
+<h1 id="why-swiftui">Why SwiftUI</h1>
+<p>SwiftUI is a modern UI framework designed to replace UIKit. Here are a few key reasons to move forward:</p>
+<ul>
+  <li>Declarative syntax that makes UI easier to reason about</li>
+  <li>Smaller and cleaner codebase with better readability</li>
+  <li>Growing support from Apple</li>
+</ul>
+
+<h1 id="migration-strategy-from-leaves-to-root">Migration Strategy: From Leaves to Root</h1>
+<p><img src="/assets/img/posts/migrate_from_UIKit_to_SwiftUI/migration_path.png" alt="" /></p>
+
+<p>Every app consists of features, each feature includes screens, and every screen has multiple subviews. That’s where the idea From Leaves to Root comes from.</p>
+<ol>
+  <li>Start with subview - these are the easiest to migrate and reuse.</li>
+  <li>Then migrate individual screens that use these subviews.</li>
+  <li>Once screens are ready, group them into features or user flows.</li>
+  <li>Finally, migrate the main app structure and root navigation.</li>
+</ol>
+
+<p>This way, you reduce the risk and ensure that every level of the app is prepared before moving deeper.</p>
+<h1 id="getting-started-with-the-design-system">Getting Started with the Design System</h1>
+<p>The first and most important step is to migrate the design system. You need to create SwiftUI components that can be used both in SwiftUI and UIKit.
+Two techniques help:</p>
+<ul>
+  <li>Use <a href="https://developer.apple.com/documentation/swiftui/uihostingcontroller">UIHostingController</a> to wrap SwiftUI views and use them inside UIKit.</li>
+  <li>Use <a href="https://developer.apple.com/documentation/swiftui/uiviewrepresentable">UIViewRepresentable</a> or <a href="https://developer.apple.com/documentation/swiftui/uiviewcontrollerrepresentable">UIViewControllerRepresentable</a> to wrap UIKit components for SwiftUI.
+<img src="/assets/img/posts/migrate_from_UIKit_to_SwiftUI/swiftui_uikit_wrappers.png" alt="" /></li>
+</ul>
+
+<p>This compatibility layer will allow you to slowly introduce SwiftUI components into the existing codebase.</p>
+
+<h2 id="example-migrating-a-custom-button-from-uikit-to-swiftui">Example: Migrating a Custom Button from UIKit to SwiftUI</h2>
+<p>Let’s say you have a custom button in your design system. Right now, it’s written with UIKit and used only in UIKit screens.
+This is a great candidate for starting migration; it’s a reusable view, a classic “leaf” in the UI tree.</p>
+<h3 id="step-1-create-a-shared-configuration">Step 1: Create a Shared Configuration</h3>
+<p>First, define a shared configuration model. This struct will be used both by UIKit and SwiftUI.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">CustomButtonConfiguration</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">action</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>This way, you can keep the button logic and appearance consistent across platforms.</p>
+<h3 id="step-2-build-the-swiftui-view">Step 2: Build the SwiftUI View</h3>
+<p>Now let’s create a SwiftUI view that renders the button using this configuration.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">CustomButton</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">config</span><span class="p">:</span> <span class="kt">CustomButtonConfiguration</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Button</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">action</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Now you can use this SwiftUI view in all new SwiftUI screens.</p>
+<h3 id="step-3-make-it-available-in-uikit">Step 3: Make It Available in UIKit</h3>
+<p>To use this SwiftUI button in UIKit, you can wrap it with <code class="language-plaintext highlighter-rouge">UIHostingController</code>.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">CustomButtonView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="k">let</span> <span class="nv">hostingController</span><span class="p">:</span> <span class="kt">UIHostingController</span><span class="o">&lt;</span><span class="kt">CustomButton</span><span class="o">&gt;</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">config</span><span class="p">:</span> <span class="kt">CustomButtonConfiguration</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">swiftUIButton</span> <span class="o">=</span> <span class="kt">CustomButton</span><span class="p">(</span><span class="nv">config</span><span class="p">:</span> <span class="n">config</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">hostingController</span> <span class="o">=</span> <span class="kt">UIHostingController</span><span class="p">(</span><span class="nv">rootView</span><span class="p">:</span> <span class="n">swiftUIButton</span><span class="p">)</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+
+        <span class="nf">setup</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">fatalError</span><span class="p">(</span><span class="s">"init(coder:) has not been implemented"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">hostedView</span> <span class="o">=</span> <span class="n">hostingController</span><span class="o">.</span><span class="n">view</span><span class="o">!</span>
+        <span class="n">hostedView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="nf">addSubview</span><span class="p">(</span><span class="n">hostedView</span><span class="p">)</span>
+
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="n">hostedView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">topAnchor</span><span class="p">),</span>
+            <span class="n">hostedView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bottomAnchor</span><span class="p">),</span>
+            <span class="n">hostedView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">leadingAnchor</span><span class="p">),</span>
+            <span class="n">hostedView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">trailingAnchor</span><span class="p">)</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>This class allows you to use the new SwiftUI button in any UIKit screen by simply passing the same shared configuration.</p>
+
+<h3 id="summary">Summary</h3>
+<p>With this pattern:</p>
+<ul>
+  <li>SwiftUI screens use <code class="language-plaintext highlighter-rouge">CustomButton</code> directly</li>
+  <li>UIKit screens use <code class="language-plaintext highlighter-rouge">CustomButtonView</code></li>
+  <li>Both share the same <code class="language-plaintext highlighter-rouge">CustomButtonConfiguration</code></li>
+</ul>
+
+<p>This is a clean and practical example of <em>migrating a leaf</em>, and it keeps your design system consistent across your codebase.</p>
+<h1 id="gradual-replacement-of-screens">Gradual Replacement of Screens</h1>
+<p>Start with low-risk screens, such as:</p>
+<ul>
+  <li>Settings</li>
+  <li>About pages</li>
+  <li>Simple informational views</li>
+</ul>
+
+<p>Once these are stable, continue with more important flows. Leave your core flows for the final stage, after the team has gained confidence.
+During the process, rely on bridges between UIKit and SwiftUI. You don’t need to migrate everything at once. Use what works best in each case.</p>
+<h1 id="managing-the-migration-inside-the-team">Managing the Migration Inside the Team</h1>
+<p>Large migrations are never just about code. They are also about team culture, support, and documentation.
+Here’s what helps:</p>
+<ul>
+  <li>Create a dedicated Slack channel for SwiftUI questions</li>
+  <li>Schedule office hours with SwiftUI experts</li>
+  <li>Run workshops and record sessions</li>
+  <li>Build tutorials on lifecycle, previews, and state management</li>
+  <li>Define a SwiftUI style guide</li>
+  <li>Set up pre-commit hooks to enforce coding standards</li>
+  <li>Offer onboarding tools: code snippets, screen templates, reusable components</li>
+  <li>Run regular review sessions to share the migration experience</li>
+  <li>Require approval for using SwiftUI in new features, with clear documentation</li>
+  <li>Create a SwiftUI Adoption Team to review implementation quality</li>
+  <li>Use a separate <code class="language-plaintext highlighter-rouge">GitHub</code> label for SwiftUI pull requests</li>
+</ul>
+
+<p>These steps help create a supportive environment and improve the quality of SwiftUI code across the company.</p>
+<h1 id="automated-testing-with-swiftui">Automated Testing with SwiftUI</h1>
+<p>The good news: you don’t need to rewrite all your tests.
+Because SwiftUI supports accessibility identifiers just like UIKit, you can reuse your existing UI tests. This reduces regression risks and gives confidence that your migration didn’t break the user experience.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Button</span><span class="p">(</span><span class="s">"Login"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// action</span>
+<span class="p">}</span>
+<span class="o">.</span><span class="nf">accessibilityIdentifier</span><span class="p">(</span><span class="s">"login_button"</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">buttons</span><span class="p">[</span><span class="s">"login_button"</span><span class="p">]</span>
+<span class="kt">XCTAssert</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Use the same identifiers for buttons, labels, and inputs. The test scripts will continue to work even after the screens are fully rewritten in SwiftUI.</p>
+<h3 id="preview-reliability">Preview Reliability</h3>
+<p>SwiftUI previews are helpful but not always reliable. They can break, crash, or show outdated results.
+To improve trust in your previews:</p>
+<ul>
+  <li>Add snapshot tests to track changes</li>
+  <li>Use snapshots to detect unwanted UI modifications</li>
+  <li>Treat snapshots as a safety net for design consistency
+<img src="/assets/img/posts/migrate_from_UIKit_to_SwiftUI/url.png" alt="" /></li>
+</ul>
+
+<p>This approach will help you maintain accurate previews and avoid last-minute surprises in production.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Migrating to SwiftUI is a big step, but with the right strategy, it becomes manageable. Start with subviews, build your foundation, and move step-by-step toward the full transition.</p>
+
+<p>Try creating your first SwiftUI component and wrapping it with <code class="language-plaintext highlighter-rouge">UIHostingController</code>. Migrate a simple screen. Build confidence, and let the team grow together with the framework.</p>
+
+    </div>
+  </div>
+</article>
+
+<div class="post-newsletter">
+  <section class="newsletter-section">
+  <div class="wrapper">
+    <div class="newsletter-card">
+      <div class="newsletter-icon"><svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></div>
+      <div class="newsletter-text">
+        <div class="featured-tag">✦ Newsletter</div>
+        <h3>The iOS Weekly Brief</h3>
+        <p>Every Friday: Apple and Swift news, hand-picked articles, and tools. A short, sharp briefing for iOS developers.</p>
+      </div>
+      <a class="btn-primary" href="https://iosweeklybrief.com/" target="_blank" rel="noopener">Subscribe →</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+  <footer>
+    <div class="wrapper">
+      <div class="footer-inner">
+        <span>© 2026 Vlad Khambir</span>
+        <a href="mailto:vlad.khambir@gmail.com">vlad.khambir@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

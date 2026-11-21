@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Code review. Всё, что нужно знать. | Vlad Khambir</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Code review. Всё, что нужно знать." />
+<meta name="author" content="Vlad Khambir" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Как провести Code Review, на что обратить внимание и как сделать этот процесс более эффективным." />
+<meta name="twitter:description" property="og:description" content="Как провести Code Review, на что обратить внимание и как сделать этот процесс более эффективным." />
+<link rel="canonical" href="https://www.vladkhambir.com/posts/code-review/" />
+<meta property="og:url" content="https://www.vladkhambir.com/posts/code-review/" />
+<meta property="og:site_name" content="Vlad Khambir" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-25T16:00:00-04:00" />
+<meta property="article:modified_time" content="2021-05-25T16:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Code review. Всё, что нужно знать." />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vlad Khambir"},"dateModified":"2021-05-25T16:00:00-04:00","datePublished":"2021-05-25T16:00:00-04:00","description":"Как провести Code Review, на что обратить внимание и как сделать этот процесс более эффективным.","headline":"Code review. Всё, что нужно знать.","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.vladkhambir.com/posts/code-review/"},"url":"https://www.vladkhambir.com/posts/code-review/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://www.vladkhambir.com/feed.xml" title="Vlad Khambir" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest" />
+  <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRLH8JT200"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KRLH8JT200');
+  </script>
+  
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">VK<span>.</span></a>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+    </div>
+  </nav>
+
+  
+
+
+<article class="post-view">
+  <div class="wrapper">
+    <a class="back-btn" href="/#writing">← Back to all posts</a>
+    <header class="post-header">
+      <div class="card-tags"><span class="card-tag">Engineering</span></div>
+
+      <h1>Code review. Всё, что нужно знать.</h1>
+      <div class="post-meta-row">
+        <time datetime="2021-05-25T16:00:00-04:00">May 25, 2021</time>
+        <span class="post-meta-dot"></span>
+        <span>3 min read</span>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>Два инженера, которые смотрят код, ищут пути его улучшения, делятся своим опытом — этот замечательный процесс называется Code review. Именно эту неотъемлемую часть жизни разработчика я хочу разложить по полочкам. В этой статье я опишу как провести Code review, на что обратить внимание, как сделать этот процесс более эффективным.</p>
+
+<p>А начнем мы с главного — обсудим зачем вообще нужно Code review.</p>
+
+<h1 id="какой-профит-">Какой профит? 🎯</h1>
+
+<p>Code review создано не только для улучшения кода, это социальный процесс, в котором принимают участие коллеги с двумя ролями — автор и ревьювер.</p>
+
+<p>Вы можете делать друг друга лучше, так как каждый делится своим опытом и мнением. Это позволяет быстро обучаться, находить пробелы в знаниях и стремительно их заполнить.</p>
+
+<blockquote>
+  <p><strong>Ловушка</strong></p>
+
+  <p>Code review стоит воспринимать исключительно в положительном ключе. Все плюсы могут быть утеряны, если автор воспринимает обсуждение как критику.</p>
+</blockquote>
+
+<h1 id="какой-процесс-проведения-code-review">Какой процесс проведения Code review?</h1>
+
+<p>Перед началом ревью я рекомендую создать документ в котором будут записываться список <strong>рекомендаций</strong> от ревьювера.</p>
+
+<p>🔄 Code-review — процесс итерационный и на каждой итерации происходит следующее:</p>
+
+<ol>
+  <li>Автор делится кодом</li>
+  <li>Ревьювер смотрит код, формирует фидбек и отправляет его автору</li>
+  <li>Автор реагирует на фидбек уточняющими комментариями или изменениями в коде и снова отдает код на ревью.</li>
+</ol>
+
+<p>⚽️ Такая игра в пас приведет к чистому коду и шарингу знаний, все в плюсе.</p>
+
+<p>Не забываем есть слона по кусочкам, так как если мы имеем дело с большим куском кода — лучше провести ревью небольшого участка кода, разобраться со всем что нашли и  переходить к следующему куску <del>слона</del> кода.</p>
+
+<h2 id="как-писать-фидбек">Как писать фидбек?</h2>
+
+<p>Фидбек должен быть изложен как <strong>рекомендации, а не команды</strong> к выполнению.</p>
+
+<p>Рекомендации лучше команд, потому что это дает право последнего слова. И вполне возможно, что если аргументы автора будут сильны — в продакшн пойдет именно его реализация поставленной задачи.</p>
+
+<p>Круто, если ревьювер предоставляет наброски кода, возможно даже <a href="https://ru.wikipedia.org/wiki/Проверка_концепции">proof of concept</a> того как бы он решил поставленную задачу.</p>
+
+<h2 id="критикуем-код-а-не-кодера">Критикуем код, а не кодера.</h2>
+
+<p>Цель Code review — сделать код лучше, а не найти виновных. 
+Чтобы повысить командный дух и понизить напряжение — используй слово <strong>Мы</strong>, вместо <strong>Ты</strong>. Нужно размыть конкретику о том кто написал код, гораздо важнее сосредоточится на решении проблем, которые были найдены в коде.</p>
+
+<p>Кстати, в коде нужно искать не только проблемы, а и положительные моменты. За элегантные решения, грамотное программирование ревьювер может похвалить автора 👍</p>
+
+<h2 id="one-more-thing-совет-️">One more <del>thing</del> совет ☝️</h2>
+
+<p>Настоятельно рекомендую время от времени менять ревьюверов. Это позволит получить новый взгляд и опыт для всех сторон.</p>
+
+<h1 id="на-что-обращать-внимание-">На что обращать внимание? 🧐</h1>
+
+<p>Руководствуясь <a href="https://google.github.io/eng-practices/review/">рекомендациями от Google по проведению Code Review</a>, можно выделить следующие пункты на которые нужно обратить внимание при Core Review:</p>
+
+<ul>
+  <li>Дизайн: хорошо ли спроектирован и вписывается ли код в вашу систему?</li>
+  <li>Функциональность: ведет ли код так, как предполагал автор? Подходит ли эта реализация для выполнения поставленной задачи?</li>
+  <li>Сложность: можно ли сделать код проще? Сможет ли другой разработчик легко понять и использовать этот код, когда он встретится с ним в будущем?</li>
+  <li>Тесты: покрыт ли новый функционал тестами?</li>
+  <li>Именование: выбрал ли разработчик четкие имена для переменных, классов, методов и т. д.?</li>
+  <li>Комментарии: комментарии понятны и <strong>полезны</strong>?</li>
+  <li>Стиль: соответствует ли код принятым у вас стайлгайдам?</li>
+  <li>Документация: обновил ли разработчик соответствующую документацию (CHANGELOG, как минимум)?</li>
+</ul>
+
+<h1 id="где-срезать-углы-">Где срезать углы? 📐</h1>
+
+<p>Практики, которые помогут сократить время, затраченное на ревью:</p>
+
+<ul>
+  <li>Устранение ошибок <strong>до ревью</strong>. Проверяй свой код самостоятельно, велика вероятность, что еще до ревью ты сам найдешь пути для улучшения. Проверив код самостоятельно, ты экономишь время ревьювера, он этого не забудет ☺️</li>
+  <li>Создай со своей командой стайлгайд и усовершенствуйте его итеративно. Стайлгайд положит конец спорам во время Code review о нейминге, комментариях и т.д.</li>
+  <li>Не запаривайтесь над мелочами, сконцентрируйтесь на интересных вещах. Пусть за форматирование и прочее беспокоится автоматизированный анализатор и форматтер кода, а не ревьювер с автором. Сэкономленное время лучше потратить на тимбилдинг 🍻</li>
+  <li>Правильные сообщения в коммитах помогут быстро влиться в контекст. Не забывайте, что сообщение коммита — часть документации для ревью ☝️</li>
+</ul>
+
+<h1 id="заключение-">Заключение 🔑</h1>
+
+<p>Мы с тобой определили, что Code review помогает программисту развиваться. Критика — плохо, а рекомендации — хорошо.</p>
+
+<p>Еще мы выделили перечень моментов на которые стоит обращать внимание во время Code review и определили как можно оптимизировать этот процесс. Этих знаний будет вполне достаточно, чтобы проводить здоровое Code review от которого все будут только в плюсе ➕</p>
+
+<h1 id="куда-дальше-">Куда дальше? 🛣</h1>
+
+<p>Самое время написать стайлгайд для своего проекта или же подумать над интеграцией автоматического анализа и форматирования кода. А возможно кому-то стоит переосмыслить Code review и начать воспринимать его более положительно, что позволит получить наслаждение от каждой сессии Code review 🤘</p>
+
+    </div>
+  </div>
+</article>
+
+<div class="post-newsletter">
+  <section class="newsletter-section">
+  <div class="wrapper">
+    <div class="newsletter-card">
+      <div class="newsletter-icon"><svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></div>
+      <div class="newsletter-text">
+        <div class="featured-tag">✦ Newsletter</div>
+        <h3>The iOS Weekly Brief</h3>
+        <p>Every Friday: Apple and Swift news, hand-picked articles, and tools. A short, sharp briefing for iOS developers.</p>
+      </div>
+      <a class="btn-primary" href="https://iosweeklybrief.com/" target="_blank" rel="noopener">Subscribe →</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+  <footer>
+    <div class="wrapper">
+      <div class="footer-inner">
+        <span>© 2026 Vlad Khambir</span>
+        <a href="mailto:vlad.khambir@gmail.com">vlad.khambir@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

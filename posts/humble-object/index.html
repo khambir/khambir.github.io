@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Скромный объект. Шаблон, который используют все. | Vlad Khambir</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Скромный объект. Шаблон, который используют все." />
+<meta name="author" content="Vlad Khambir" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Паттерн “Скромный объект” из книги “Чистая архитектура”: как повысить тестируемость кода." />
+<meta name="twitter:description" property="og:description" content="Паттерн “Скромный объект” из книги “Чистая архитектура”: как повысить тестируемость кода." />
+<link rel="canonical" href="https://www.vladkhambir.com/posts/humble-object/" />
+<meta property="og:url" content="https://www.vladkhambir.com/posts/humble-object/" />
+<meta property="og:site_name" content="Vlad Khambir" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-16T09:00:00-04:00" />
+<meta property="article:modified_time" content="2021-05-16T09:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Скромный объект. Шаблон, который используют все." />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vlad Khambir"},"dateModified":"2021-05-16T09:00:00-04:00","datePublished":"2021-05-16T09:00:00-04:00","description":"Паттерн “Скромный объект” из книги “Чистая архитектура”: как повысить тестируемость кода.","headline":"Скромный объект. Шаблон, который используют все.","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.vladkhambir.com/posts/humble-object/"},"url":"https://www.vladkhambir.com/posts/humble-object/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://www.vladkhambir.com/feed.xml" title="Vlad Khambir" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest" />
+  <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRLH8JT200"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KRLH8JT200');
+  </script>
+  
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">VK<span>.</span></a>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+    </div>
+  </nav>
+
+  
+
+
+<article class="post-view">
+  <div class="wrapper">
+    <a class="back-btn" href="/#writing">← Back to all posts</a>
+    <header class="post-header">
+      <div class="card-tags"><span class="card-tag">Architecture</span><span class="card-tag">Testing</span></div>
+
+      <h1>Скромный объект. Шаблон, который используют все.</h1>
+      <div class="post-meta-row">
+        <time datetime="2021-05-16T09:00:00-04:00">May 16, 2021</time>
+        <span class="post-meta-dot"></span>
+        <span>2 min read</span>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>Во время чтения книги <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Чистая архитектура от Боба Мартина</a>, наткнулся на шаблон о котором ранее не слыхал… Очень удивился, когда я понял, что я использовал его всегда 😲</p>
+
+<p>Этот скромный шаблон имеет не менее скромное название - “Скромный объект”. Если ранее ты тоже не слыхал о таком паттерне - продолжай читать.</p>
+
+<h1 id="что-это-за-скромняга-и-какую-проблему-он-решает-️">Что это за скромняга и какую проблему он решает? ☺️</h1>
+
+<p>При написании тестов, мы часто сталкиваются с проблемой тестирования компонентов, которые тесно связаны с каким-то фреймворком (UI, конкретные базы данных, зависимости типа Facebook, Firebase и т.д.). Тестирование таких объектов очень неудобное из-за сложности или даже невозможности создания зависимостей, которые необходимы нашему объекту для работы.</p>
+
+<p>И решить эту проблему может <del>лень из-за которой ты не пишешь тесты</del> паттерн “Скромный объект”, который позволяет протестировать логику этих сложных для создания экземпляров объектов.</p>
+
+<h1 id="как-это-работает-">Как это работает? 🤔</h1>
+
+<p>🎯 Цель — разделить поведение на два класса:</p>
+
+<ul>
+  <li>“Скромный” класс, который будет содержать все, что с трудом поддается тестированию, в упрощенном до предела виде.</li>
+  <li>Второй класс, который будет содержать все, что было выброшено из “скромного” класса.</li>
+</ul>
+
+<p>В итоге мы получаем <em>Скромный Объект</em>, который очень прост, содержит на столько мало кода и работает так прозрачно, что нам даже не нужно покрывать его тестами. Зато второй объект (нескромный) теперь не содержит зависимостей, которые трудно создать, что позволяет легко покрыть его тестами.</p>
+
+<p>Скромный класс можно закрыть интерфейсом и легко подменять его в тестах “нескромного” класса.</p>
+
+<h1 id="примеры-использования-паттерна-">Примеры использования паттерна 🧑‍💻</h1>
+
+<h2 id="использование-в-архитектурном-паттерне-mvp">Использование в архитектурном паттерне MVP</h2>
+
+<p>MVP (Model-View-Presenter) во всю использует шаблон «Скромный объект». Можно разделить два вида поведения на два разных класса: View и Presenter.</p>
+
+<p>Представление (View) — это “скромный” объект, UI зависимый код, который сложный для тестирования. Код в этом объекте должен быть максимально простым. Он просто переносит данные в графический интерфейс, никак не обрабатывая их.</p>
+
+<p>Presenter — это легко тестируемый объект с четко определенной задачей - получить данные и преобразовать их для отображения на View.</p>
+
+<h2 id="обертка-над-базой-данных">Обертка над базой данных</h2>
+
+<p>Допустим настал тот день, когда ты решил(а) <del>уйти с айти</del>  затянуть базу данных в свое приложение. В iOS, это может быть CoreData или Realm, но это детали от которых нужно избавиться для того, что бы покрыть нашу бизнес-логику тестами и не заботиться о том какая база данных используется под капотом.</p>
+
+<p>Использование CoreData или Realm нужно сделать максимально скромным, держать код простым, например реализовать только методы CRUD.</p>
+
+<blockquote>
+  <p>CRUD — четыре базовые функции, используемые при работе с базами данных: создание (create), чтение (read), модификация (update), удаление (delete)</p>
+</blockquote>
+
+<p>Весь остальной код, связанный с бизнес-правилами, характерными для приложения (получение списка сообщений, используя скромный объект) стоит держать отдельно, так как данный код не является скромным, легко поддается тестированию и может использовать <em>скромный объект</em> для совершения CRUD операций.</p>
+
+<h1 id="заключение-">Заключение 🔑</h1>
+
+<p>Несмотря на свою скромность, шаблон “Скромный объект” так или иначе используется каждым из нас. Паттерн поможет повысить тестируемость и модульность путем выделения тяжело тестируемого кода в отдельный “скромный” класс, оставшийся код просто остается в текущем классе и его можно легко протестировать.</p>
+
+<h1 id="куда-дальше-">Куда дальше? 🛣</h1>
+
+<p>Уверен, что в твоем проекте есть парочку классов-монстров, которые сложны в тестировании и далеко не скромны по своим возможностям. Самое время разобраться с этим, используя паттерн “Скромный объект” 😉</p>
+
+    </div>
+  </div>
+</article>
+
+<div class="post-newsletter">
+  <section class="newsletter-section">
+  <div class="wrapper">
+    <div class="newsletter-card">
+      <div class="newsletter-icon"><svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></div>
+      <div class="newsletter-text">
+        <div class="featured-tag">✦ Newsletter</div>
+        <h3>The iOS Weekly Brief</h3>
+        <p>Every Friday: Apple and Swift news, hand-picked articles, and tools. A short, sharp briefing for iOS developers.</p>
+      </div>
+      <a class="btn-primary" href="https://iosweeklybrief.com/" target="_blank" rel="noopener">Subscribe →</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+  <footer>
+    <div class="wrapper">
+      <div class="footer-inner">
+        <span>© 2026 Vlad Khambir</span>
+        <a href="mailto:vlad.khambir@gmail.com">vlad.khambir@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

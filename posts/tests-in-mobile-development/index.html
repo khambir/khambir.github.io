@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Enhancing Mobile App Quality. The Importance of Testing. | Vlad Khambir</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Enhancing Mobile App Quality. The Importance of Testing." />
+<meta name="author" content="Vlad Khambir" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Survey results from 50+ mobile developers on testing practices, with an overview of test types and tools." />
+<meta name="twitter:description" property="og:description" content="Survey results from 50+ mobile developers on testing practices, with an overview of test types and tools." />
+<link rel="canonical" href="https://www.vladkhambir.com/posts/tests-in-mobile-development/" />
+<meta property="og:url" content="https://www.vladkhambir.com/posts/tests-in-mobile-development/" />
+<meta property="og:site_name" content="Vlad Khambir" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-17T15:00:00-04:00" />
+<meta property="article:modified_time" content="2023-06-17T15:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Enhancing Mobile App Quality. The Importance of Testing." />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vlad Khambir"},"dateModified":"2023-06-17T15:00:00-04:00","datePublished":"2023-06-17T15:00:00-04:00","description":"Survey results from 50+ mobile developers on testing practices, with an overview of test types and tools.","headline":"Enhancing Mobile App Quality. The Importance of Testing.","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.vladkhambir.com/posts/tests-in-mobile-development/"},"url":"https://www.vladkhambir.com/posts/tests-in-mobile-development/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://www.vladkhambir.com/feed.xml" title="Vlad Khambir" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest" />
+  <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRLH8JT200"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KRLH8JT200');
+  </script>
+  
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">VK<span>.</span></a>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+    </div>
+  </nav>
+
+  
+
+
+<article class="post-view">
+  <div class="wrapper">
+    <a class="back-btn" href="/#writing">← Back to all posts</a>
+    <header class="post-header">
+      <div class="card-tags"><span class="card-tag">Testing</span><span class="card-tag">iOS</span></div>
+
+      <h1>Enhancing Mobile App Quality. The Importance of Testing.</h1>
+      <div class="post-meta-row">
+        <time datetime="2023-06-17T15:00:00-04:00">Jun 17, 2023</time>
+        <span class="post-meta-dot"></span>
+        <span>7 min read</span>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>Testing plays a vital role in ensuring the quality and reliability of mobile apps. By thoroughly testing the software during the development process, mobile software developers can identify and address issues early, leading to a more stable and user-friendly application.</p>
+
+<p>In this article, we will explore the results of a survey conducted among mobile software developers. We will delve into the reasons for writing tests and an overview of different test types.</p>
+
+<h1 id="-survey-results">📊 Survey Results</h1>
+<p>I conducted a survey of over 50 mobile developers to learn about their testing practices in their projects.</p>
+
+<p><img src="/assets/img/posts/tests_in_mob_dev/survey_results_do_you_write_tests.png" alt="Do you write tests" />
+The results showed that 55% of the surveyed developers do not write tests, while the other 45% believed it is important.</p>
+
+<p>When asked why they do not write tests, the main reasons cited were:</p>
+<ul>
+  <li>⏰ Lack of sufficient time to dedicate to writing and maintaining tests.</li>
+  <li>👎 The perception that their current codebase is unsuitable for effective testing.</li>
+  <li>🔃 Frequent code changes that make maintaining tests challenging.</li>
+  <li>❌ Limited proficiency in writing comprehensive tests.</li>
+  <li>🤖 Overreliance on end-to-end testing as a substitute for more granular testing practices.</li>
+</ul>
+
+<p><img src="/assets/img/posts/tests_in_mob_dev/survey_results_test_coverage.png" alt="Code coverage" />
+The second question in the survey focused on code coverage, revealing that a significant number of developers had low code coverage, with only a few achieving coverage above 80%. In fact, the majority of respondents had a code coverage level of merely 10%.</p>
+
+<p>To further explore this aspect, I posed additional questions to developers with less than 10% code coverage and those with more than 80% code coverage.
+For developers with less than 10% coverage, I asked: What areas do you cover in testing? Their responses shed light on the following:</p>
+<ol>
+  <li><strong>Critical functionality</strong>: These developers prioritize testing critical functionalities of the app, such as onboarding processes and payment systems. These components are crucial for ensuring a seamless user experience and require thorough validation.</li>
+  <li><strong>Difficult logic</strong>: Testing efforts extend to challenging and complex logic areas of the codebase, including parsers, calculations, algorithms, and other intricate components that significantly contribute to the app’s functionality.</li>
+  <li><strong>Business logic</strong>: Developers also focus on testing the business logic of the app, encompassing view models and use cases. These components represent the core functionalities and workflows of the application.</li>
+</ol>
+
+<p>Conversely, developers with more than 80% code coverage were asked about the areas they do not cover. Their responses included the following:</p>
+<ol>
+  <li><a href="https://www.vladkhambir.com/posts/humble-object/">Humble Objects</a>: These developers mentioned that they do not write tests specifically for Humble Objects, which are minimalistic and decoupled classes popularized by Uncle Bob (Robert C. Martin) in his book. Humble Objects handle low-level details and interactions and are isolated from the complexities of the system.</li>
+  <li>A/B tests: Another area not covered by these developers is A/B tests. Due to the potential for frequent changes, they opt not to write tests for this functionality, as it may undergo modifications in the near future.</li>
+</ol>
+
+<p>Based on these two answers, we can determine which areas to prioritize for test coverage in the absence of tests in our app and establish criteria for when to conclude our testing efforts.</p>
+
+<h1 id="-reasons-to-write-tests">🤔 Reasons to Write Tests</h1>
+<p><img src="/assets/img/posts/tests_in_mob_dev/reasons_road.png" alt="Reasons road" />
+Just like road markings guide drivers and enhance safety, tests provide several benefits in software development. Let’s explore the parallels between road markings and testing, highlighting their shared pros.</p>
+<ol>
+  <li>Increased Safety and Reduced Chances of Crashes: Road markings serve as visual cues that guide drivers, enhancing road safety and reducing the likelihood of accidents. Similarly, testing in software development minimizes the chances of errors or bugs, ensuring a stable and secure product. By thoroughly testing software, developers can identify and rectify potential issues, leading to a more robust and reliable application.</li>
+  <li>Easy Adaptation for Drivers in New Roads: Road markings provide valuable information to drivers, especially when navigating unfamiliar roads. They offer clear guidance and help drivers adapt quickly to new surroundings. In a similar vein, tests in software development contribute to the smooth onboarding process for new team members. Well-written tests serve as documentation and examples, allowing new developers to understand the existing codebase more efficiently and make necessary modifications confidently.</li>
+  <li>Limitations that Help Drivers Ride Without Stress: Road markings set boundaries and provide clear instructions, helping drivers navigate complex situations and reduce stress on the road. Similarly, testing imposes limitations on the code-writing process, promoting better coding practices and improved code quality. Tests serve as checks and balances, ensuring that developers adhere to coding standards, maintain consistency, and produce reliable software.</li>
+</ol>
+
+<p>In summary, testing shares key advantages with road markings. It reduces the chances of errors, facilitates the onboarding process for new team members, and establishes limitations that improve code quality. By embracing testing practices, software developers can mitigate risks, enhance productivity, and deliver robust and reliable applications, just as road markings contribute to safer and more efficient roadways.</p>
+
+<h3 id="other-benefits-of-tests">Other Benefits of Tests:</h3>
+<p>Writing tests brings several benefits to mobile software development:</p>
+<ul>
+  <li>🏎️ <strong>Development speed</strong>: Tests catch errors early, allowing developers to fix problems promptly and maintain a faster development pace.</li>
+  <li>✅ <strong>Safe refactoring</strong>: Tests act as a safety net during code refactoring, ensuring that changes do not introduce regressions or unintended consequences.</li>
+  <li>🐞 <strong>Early detection of bugs</strong>: Tests help identify issues and unexpected behavior early in the development cycle, enabling developers to address them promptly and reduce debugging efforts later on.</li>
+  <li>📈 <strong>Better code quality</strong>: Writing tests encourages cleaner and more maintainable code, leading to improved overall code quality.</li>
+  <li>🙌 <strong>Reduced manual testing</strong>: Automated tests eliminate the need for extensive manual testing, saving time and effort while maintaining consistent and reliable results.</li>
+</ul>
+
+<h1 id="️-test-types-overview">🎛️ Test Types Overview</h1>
+<p>Testing in software development can be categorized into three types, represented by a pyramid
+<img src="/assets/img/posts/tests_in_mob_dev/test_types_pyramid.png" alt="Test types pyramid" /></p>
+<ol>
+  <li><strong>Unit Testing</strong>: Unit testing, comparable to testing individual components of a rocket like the fuel tank or combustion chamber, focuses on testing isolated units of code. It verifies that each unit performs correctly in isolation, catching bugs early on. Unit testing is efficient and cost-effective.</li>
+  <li><strong>Integration Testing</strong>: Similar to verifying the interaction between the fuel tank and combustion chamber, integration testing ensures that different components work together properly. It validates the communication and collaboration between units that have passed their individual tests.</li>
+  <li><strong>End-to-End Testing</strong>: End-to-end testing, analogous to launching a rocket to observe its behavior throughout the entire process, validates the entire system as a whole. It simulates real-life scenarios, including user interactions, and ensures seamless functionality across all components. End-to-end testing represents the highest level of testing and is comprehensive but can be more expensive to maintain.</li>
+</ol>
+
+<p>In summary, unit testing focuses on testing isolated units, integration testing verifies component interactions, and end-to-end testing validates the system as a whole, mirroring the stages of a rocket’s development and launch process.
+While the traditional testing pyramid emphasizes a larger base of unit tests and fewer end-to-end tests, some teams prioritize end-to-end testing more prominently. This approach, known as the inverted pyramid, ensures thorough validation of features before releasing them to end users.
+<img src="/assets/img/posts/tests_in_mob_dev/test_types_inverted_pyramid.png" alt="Test types inverted pyramid" />
+In my team, we prefer this type of pyramid. However, it is worth noting that the majority of mobile development teams typically adhere to the standard testing pyramid.
+<img src="/assets/img/posts/tests_in_mob_dev/survey_results_test_type.png" alt="Survey results test type" /></p>
+
+<h1 id="-bonus-tools-that-we-use-in-our-team">🎁 Bonus: Tools that we use in our team</h1>
+<p>It is essential to leverage the right tools to streamline and optimize the testing process. Here are a few tools which used by our team:</p>
+<ol>
+  <li>Code Generation: Code generation tools, such as <a href="https://github.com/krzysztofzablocki/Sourcery">Sourcery</a>, automate the creation of fake data and mocks, making the testing process more efficient and reducing manual effort.</li>
+  <li>Snapshot Testing: Snapshot testing tools like <a href="https://github.com/pointfreeco/swift-snapshot-testing">Swift Snapshot Testing</a> enable developers to capture screenshots of the user interface and compare them to previously saved snapshots. This technique helps identify unintended changes and ensures visual consistency across different app versions.</li>
+  <li><a href="https://appium.io/docs/en/2.0/">Appium</a>: Appium is an end-to-end testing tool that simulates user activities and verifies system behavior from a user’s perspective. It utilizes Espresso or UIAutomator2 for Android apps and XCUI for iOS apps. With a black box testing approach, Appium evaluates all relevant subsystems, including UI/UX, server, database, and dependencies.</li>
+  <li>CI/CD Tools: <a href="https://fastlane.tools/">Fastlane</a>, <a href="https://danger.systems/">Danger</a>, and <a href="https://github.com/fastlane-community/xcov">Xcov</a> automate various tasks related to building, testing, and deploying mobile apps. Fastlane enables script execution, Danger integrates with the code review process for analysis, and Xcov assesses code coverage using changes from pull requests.</li>
+</ol>
+
+<p>By incorporating these tools into your testing process, you can improve efficiency, code quality, and overall app reliability.</p>
+
+<h1 id="-conclusion">🎬 Conclusion</h1>
+<p>In the fast-paced world of mobile app development, testing holds the key to success. It provides confidence in app quality and stability, ensuring a seamless user experience. The survey results highlighted the importance of test-driven development and the challenges faced by mobile software developers. By incorporating different types of tests, such as unit testing, integration testing, and end-to-end testing, developers can enhance the reliability, maintainability, and overall quality of their mobile apps.</p>
+
+<p>Testing is not a burden but an investment in creating successful mobile apps that stand out in the competitive market. By prioritizing testing and utilizing the right tools, you can deliver mobile apps that meet user expectations and drive business success.</p>
+
+    </div>
+  </div>
+</article>
+
+<div class="post-newsletter">
+  <section class="newsletter-section">
+  <div class="wrapper">
+    <div class="newsletter-card">
+      <div class="newsletter-icon"><svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></div>
+      <div class="newsletter-text">
+        <div class="featured-tag">✦ Newsletter</div>
+        <h3>The iOS Weekly Brief</h3>
+        <p>Every Friday: Apple and Swift news, hand-picked articles, and tools. A short, sharp briefing for iOS developers.</p>
+      </div>
+      <a class="btn-primary" href="https://iosweeklybrief.com/" target="_blank" rel="noopener">Subscribe →</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+  <footer>
+    <div class="wrapper">
+      <div class="footer-inner">
+        <span>© 2026 Vlad Khambir</span>
+        <a href="mailto:vlad.khambir@gmail.com">vlad.khambir@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

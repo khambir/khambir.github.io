@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Digital маркетинг. Шпаргалка для инженеров 🧑‍💻 | Vlad Khambir</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Digital маркетинг. Шпаргалка для инженеров 🧑‍💻" />
+<meta name="author" content="Vlad Khambir" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="ROI, ARPU, LTV, Retention, Funnel: маркетинговые метрики, которые нужно знать инженеру в продуктовой компании." />
+<meta name="twitter:description" property="og:description" content="ROI, ARPU, LTV, Retention, Funnel: маркетинговые метрики, которые нужно знать инженеру в продуктовой компании." />
+<link rel="canonical" href="https://www.vladkhambir.com/posts/digital-marketing-for-engineers/" />
+<meta property="og:url" content="https://www.vladkhambir.com/posts/digital-marketing-for-engineers/" />
+<meta property="og:site_name" content="Vlad Khambir" />
+<meta property="og:image" content="https://www.vladkhambir.com/assets/img/posts/marketing/marketing_header.png" />
+<meta property="og:image:alt" content="Финансовые и маркетинговые термины/метрики" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-06T15:00:00-04:00" />
+<meta property="article:modified_time" content="2021-05-06T15:00:00-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.vladkhambir.com/assets/img/posts/marketing/marketing_header.png" />
+<meta name="twitter:image:alt" content="Финансовые и маркетинговые термины/метрики" />
+<meta name="twitter:title" content="Digital маркетинг. Шпаргалка для инженеров 🧑‍💻" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vlad Khambir"},"dateModified":"2021-05-06T15:00:00-04:00","datePublished":"2021-05-06T15:00:00-04:00","description":"ROI, ARPU, LTV, Retention, Funnel: маркетинговые метрики, которые нужно знать инженеру в продуктовой компании.","headline":"Digital маркетинг. Шпаргалка для инженеров 🧑‍💻","image":{"alt":"Финансовые и маркетинговые термины/метрики","url":"https://www.vladkhambir.com/assets/img/posts/marketing/marketing_header.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.vladkhambir.com/posts/digital-marketing-for-engineers/"},"url":"https://www.vladkhambir.com/posts/digital-marketing-for-engineers/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://www.vladkhambir.com/feed.xml" title="Vlad Khambir" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest" />
+  <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRLH8JT200"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KRLH8JT200');
+  </script>
+  
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">VK<span>.</span></a>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+    </div>
+  </nav>
+
+  
+
+
+<article class="post-view">
+  <div class="wrapper">
+    <a class="back-btn" href="/#writing">← Back to all posts</a>
+    <header class="post-header">
+      <div class="card-tags"><span class="card-tag">Marketing</span></div>
+
+      <h1>Digital маркетинг. Шпаргалка для инженеров 🧑‍💻</h1>
+      <div class="post-meta-row">
+        <time datetime="2021-05-06T15:00:00-04:00">May 6, 2021</time>
+        <span class="post-meta-dot"></span>
+        <span>4 min read</span>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>Обычный митинг в продуктовой IT компании в котором принимаю участие программисты, QA и аналитики с маркетологами. Последние часто бросаются какими-то аббревиатурами, объясняя как у нашего продукта идут дела.</p>
+
+<p><strong>Что это за буквы?</strong> 🤨 Именно такой вопрос возникал у меня на первых неделях работы в продуктовой компании, когда я слышал набор букв типа ROI, ARPU или термины: косты, когорта, лид и т.д. Если у тебя такие же проблемы, то после прочтения данной статьи многое должно проясниться 😉</p>
+
+<h1 id="почему-это-важно-">Почему это важно? 🤔</h1>
+
+<p>В аутсорсе обычный технический специалист редко может слышать о финансовых и маркетинговых метриках, потому что часто этим занимается кто-то со стороны заказчика.</p>
+
+<p>Работая в продуктовой компании, продукт уже не в стороне, ты внутри него и в твоих силах влиять на его состояние гораздо эффективнее чем это происходит в аутсорсе.</p>
+
+<p>Но куда развивать продукт? Как узнать хорошо ли ему от наших идей и изменений? Ответ на это смогут дать различные показатели, которые мы вместе с тобой рассмотрим далее.</p>
+
+<h1 id="немного-терминологии-">Немного терминологии 🤓</h1>
+
+<p>Рассмотрим основные термины, которые часто употребляются в разговоре с маркетологами, аналитиками и не только :]</p>
+
+<p>🌱 Органика или нет?</p>
+
+<p>Тут речь не о химии, а о разных видах трафика, который делится на органический и неорганический.</p>
+
+<p><strong>Органический трафик</strong> – это посетители, которые качают приложение или переходят на сайт из обычных результатов поиска, а не платных рекламных объявлений. Высокая позиция в поиске AppStore может здорово поднять твой органический трафик.</p>
+
+<p><strong>Неорганический трафик</strong> - платный трафик при котором посетители приходят по рекламному объявлению.</p>
+
+<p><strong>🧲 Customer retention</strong> - это метрика удержания потребителей в течение определенного периода времени. Успех в удержании клиентов измеряется показателем Retention Rate (коэффициент удержания клиентов). Является противоположностью Churn Rate (показатель оттока клиентов). Оценивая Retention Rate можно определить насколько хорошо приложение способно удерживать пользователей.</p>
+
+<p>Пример Retention моего <a href="https://apps.apple.com/ua/app/medkrok/id1515141600">pet-проекта</a> на котором видно, что если наше приложение установит 300 человек, то спустя месяц им продолжат пользоваться 70 из них (23%)</p>
+
+<p><img src="/assets/img/posts/marketing/retention.png" alt="Retention MedKrok" /></p>
+
+<p><strong>🎯 Конверсия</strong> - это процент пользователей, совершивших какое-либо целевое действие.</p>
+
+<p>Небольшой пример расчета конверсии в платеж:</p>
+
+<blockquote>
+  <p>Конверсия в платеж = Платящие пользователи / Новые пользователи</p>
+</blockquote>
+
+<p>Т.е. если у нас 100 пользователей и из них 10 совершили покупку, то можно сказать, что конверсия в платеж составляет 10%.</p>
+
+<p>👨‍👩‍👧‍👦 <strong>Когорта</strong> - группа людей, которая имеет одну или несколько общих характеристик и так же совершили определенное действие в заданный отрезок времени.
+Например, зарегистрировались в один день или сделали первую покупку в промежутке между 15 и 30 октября. Именно момент времени отличает когорту от обычного сегмента.</p>
+
+<p>🌪 <strong>Funnel (воронка)</strong> - отображает путь пользователя к целевому действию. На каждом этапе прохождения воронки часть пользователей отпадает и только определенный процент доходит до цели (похоже на собеседования с разными этапами отбора 😉).</p>
+
+<p>На данном скрине представлена воронка пользователей, которые шли к изучению предмета в Education приложении.</p>
+
+<p>Первый этап - пользователи выбирают свой факультет</p>
+
+<p>Второй этап - выбор предмета для изучения</p>
+
+<p>Третий этап - пользователи начали изучать выбранный предмет.</p>
+
+<p><img src="/assets/img/posts/marketing/funnel.png" alt="Funnel MedKrok" /></p>
+
+<p>Видно, что практически половина пользователей не дошли до изучения предмета, а потерялись на ранних этапах. Есть над чем подумать, благодаря данной воронке 🤔</p>
+
+<p><strong>💰 Marketing costs</strong> - совокупность средств, затраченных на маркетинг.</p>
+
+<p>🤑 <strong>Lead</strong> - потенциальный клиент, который ответил на предложение рекламодателя.</p>
+
+<p>🧳 <strong>Gross</strong> — это доход <strong>ДО налогообложения.</strong></p>
+
+<p>👛 <strong>Net</strong> — это доход <strong>ПОСЛЕ уплаты налогов.</strong></p>
+
+<h1 id="основные-метрики-">Основные метрики 📈</h1>
+
+<h3 id="roi">ROI</h3>
+
+<p>ROI (Return of investments) - показатель возврата инвестиций. Вложив куда-то средства, мы можем получить выгоду от этого вложения. Показателем того, как возвращаются вложения, является ROI. Рассчитывается данный показатель за определенный промежуток времени - неделя, год (зависит от бизнеса).</p>
+
+<blockquote>
+  <p>ROI = (доход - расход) / расход</p>
+</blockquote>
+
+<p>Если ROI &gt; 0, то можно открывать шампанское 🍾, так как наши инвестиции окупились.</p>
+
+<h3 id="arpu">ARPU</h3>
+
+<p>ARPU (Average Revenue Per User) - средний доход от <strong>каждого</strong> пользователя за период времени.</p>
+
+<blockquote>
+  <p>ARPU = доход за период / количество <strong>активных</strong> пользователей за период</p>
+</blockquote>
+
+<p>ARPU фокусируется на отрезке времени (месяц, год), а не за все время.</p>
+
+<p>Если за месяц наши 3000 пользователей принесли нам $1000, то имеем:</p>
+
+<blockquote>
+  <p>ARPU = $1000 / 3000 = $0.3</p>
+</blockquote>
+
+<p>это означает, что один пользователь нам приносит около $0.3 в месяц.</p>
+
+<h3 id="arppu">ARPPU</h3>
+
+<p>ARPU (Average Revenue Per <strong>Paying</strong> User) - средний доход с пользователя, <strong>который заплатил</strong> за ваш продукт или услугу.</p>
+
+<blockquote>
+  <p>ARPU = доход за период / количество <strong>заплативших</strong> пользователей за период</p>
+</blockquote>
+
+<p>Главное отличие от ARPU - в ARPPU принимают участие только те пользователи, которые совершили покупку в нашем приложении.</p>
+
+<p>Допустим из наших 3000 пользователей всего 500 являются платниками (совершали покупки), тогда мы можем рассчитать ARPPU:</p>
+
+<blockquote>
+  <p>ARPPU = $1000 / 500 = $2</p>
+</blockquote>
+
+<p>Да, именно $2 в среднем приносит платник в этом случае.</p>
+
+<h3 id="ltvclv">LTV/CLV</h3>
+
+<p>LTV/CLV (Lifetime Value / Customer lifetime value) - прибыль, которую приносит пользователь за всё время работы с ним.</p>
+
+<blockquote>
+  <p>LTV = Lifetime * ARPU</p>
+</blockquote>
+
+<p>Если наш пользователь находится с нами на протяжении трех месяцев и мы знаем, что его ARPU за месяц составляет $0.3, то можем высчитать LTV:</p>
+
+<blockquote>
+  <p>LTV = 3 * $0.3 = $0.9</p>
+</blockquote>
+
+<p>Получается, что один привлеченный пользователь на наш воображаемый проект потенциально может нам принести $0.9.</p>
+
+<p>Эта метрика помогает определить за сколько мы готовы купить пользователя, закупая трафик. Стоимость привлечения юзера (customer acquisition cost <strong>CAC</strong>) должна быть меньше, чем его LTV, иначе мы получим убытки.</p>
+
+<h1 id="заключение-">Заключение 🔑</h1>
+
+<p>Мы прошлись по самым распространенным метрикам и терминам, которые используются маркетологами и аналитиками в продуктовой IT компании. Эта информация поможет не просто поддержать беседу с коллегами, а и больше понимать продукт над которым ты работаешь.</p>
+
+<h1 id="куда-дальше-">Куда дальше? 🛣</h1>
+
+<p>Теперь у тебя достаточно знаний, что бы краем глаза заглянуть в отчеты аналитиков и увидеть как дышит твой проект, сопоставить графики с изменениями на продукте и самостоятельно определить полезность этих изменений.</p>
+
+    </div>
+  </div>
+</article>
+
+<div class="post-newsletter">
+  <section class="newsletter-section">
+  <div class="wrapper">
+    <div class="newsletter-card">
+      <div class="newsletter-icon"><svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></div>
+      <div class="newsletter-text">
+        <div class="featured-tag">✦ Newsletter</div>
+        <h3>The iOS Weekly Brief</h3>
+        <p>Every Friday: Apple and Swift news, hand-picked articles, and tools. A short, sharp briefing for iOS developers.</p>
+      </div>
+      <a class="btn-primary" href="https://iosweeklybrief.com/" target="_blank" rel="noopener">Subscribe →</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+  <footer>
+    <div class="wrapper">
+      <div class="footer-inner">
+        <span>© 2026 Vlad Khambir</span>
+        <a href="mailto:vlad.khambir@gmail.com">vlad.khambir@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

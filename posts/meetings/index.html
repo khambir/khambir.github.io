@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Meetings through the eyes of a programmer | Vlad Khambir</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Meetings through the eyes of a programmer" />
+<meta name="author" content="Vlad Khambir" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="How we set up meetings for our team: Planning, Refinement, Retrospective, Sync-up, and Pitch, with timebox recommendations." />
+<meta name="twitter:description" property="og:description" content="How we set up meetings for our team: Planning, Refinement, Retrospective, Sync-up, and Pitch, with timebox recommendations." />
+<link rel="canonical" href="https://www.vladkhambir.com/posts/meetings/" />
+<meta property="og:url" content="https://www.vladkhambir.com/posts/meetings/" />
+<meta property="og:site_name" content="Vlad Khambir" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-29T16:00:00-04:00" />
+<meta property="article:modified_time" content="2022-04-29T16:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Meetings through the eyes of a programmer" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vlad Khambir"},"dateModified":"2022-04-29T16:00:00-04:00","datePublished":"2022-04-29T16:00:00-04:00","description":"How we set up meetings for our team: Planning, Refinement, Retrospective, Sync-up, and Pitch, with timebox recommendations.","headline":"Meetings through the eyes of a programmer","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.vladkhambir.com/posts/meetings/"},"url":"https://www.vladkhambir.com/posts/meetings/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://www.vladkhambir.com/feed.xml" title="Vlad Khambir" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest" />
+  <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRLH8JT200"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KRLH8JT200');
+  </script>
+  
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">VK<span>.</span></a>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+    </div>
+  </nav>
+
+  
+
+
+<article class="post-view">
+  <div class="wrapper">
+    <a class="back-btn" href="/#writing">← Back to all posts</a>
+    <header class="post-header">
+      <div class="card-tags"><span class="card-tag">Agile</span><span class="card-tag">Productivity</span></div>
+
+      <h1>Meetings through the eyes of a programmer</h1>
+      <div class="post-meta-row">
+        <time datetime="2022-04-29T16:00:00-04:00">Apr 29, 2022</time>
+        <span class="post-meta-dot"></span>
+        <span>3 min read</span>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>My colleague and I had an assignment - to set up processes for our small team (10 members). At first look, it can be strange that developers set up processes. Why not a scrum master or a project manager?
+Let’s go back in history and remember a little about the <a href="https://ru.wikipedia.org/wiki/Agile_Manifesto">Agile Manifesto</a> and its 17 authors, among whom are world-renowned software developers such as <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%82%D0%B8%D0%BD,_%D0%A0%D0%BE%D0%B1%D0%B5%D1%80%D1%82_(%D0%B8%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80)">Robert Martin</a>, <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%B7%D0%B5%D1%80%D0%BB%D0%B5%D0%BD%D0%B4,_%D0%94%D0%B6%D0%B5%D1%84%D1%84">Jeff Sutherland</a>, <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BA,_%D0%9A%D0%B5%D0%BD%D1%82">Kent Beck</a>, <a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D1%83%D0%BB%D0%B5%D1%80,_%D0%9C%D0%B0%D1%80%D1%82%D0%B8%D0%BD">Martin Fowler</a>, and others.</p>
+
+<p>Inspired by this history, we set out to build our flexible project management framework 💪</p>
+
+<p>One of the principles of Agile development states:</p>
+
+<p>“The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.”</p>
+
+<p>This article is about communication, specifically the meetings we decided to hold with our team. We will discuss the necessary meetings, and reasons why we need them and consider participants and optimal meeting durations. 
+Buckle up, we’re heading into the world of meetings, where time should fly by, to the moon 🚀</p>
+
+<h2 id="-planning">📋 Planning</h2>
+<p>Planning is the meeting that initiates the Sprint. At this meeting, we plan the work for the next Sprint.</p>
+
+<h3 id="purposes">Purposes:</h3>
+<ul>
+  <li>The Product Owner and the team propose ways to increase the value of the product.</li>
+  <li>Based on the proposals, the Sprint goal is formed.</li>
+  <li>The team estimates the tasks that will help achieve the Sprint goal.</li>
+  <li>The estimated tasks are moved from the backlog to the Sprint.</li>
+</ul>
+
+<h3 id="participants">Participants:</h3>
+<p>The Scrum team and the Product Owner.</p>
+
+<h3 id="timebox">Timebox:</h3>
+<p><strong>Up to</strong> 1 hour.</p>
+
+<h2 id="-refinement">🧐 Refinement</h2>
+<p>Refinement is an activity that is carried out during the Sprint to prepare the backlog for the next Sprint planning and clarify details for current tasks. Refinement should be done regularly and, if necessary, throughout the entire Sprint, allocating time for this activity during planning.</p>
+
+<h3 id="participants-1">Participants:</h3>
+<p>The Scrum team and anyone who would like to know all details about the task.</p>
+
+<h3 id="timebox-1">Timebox:</h3>
+<p><strong>Up to</strong> 1 hour.</p>
+
+<h2 id="-retrospective">🧠 Retrospective</h2>
+<p><del>Retrospective - one more meeting in the calendar with an unclear agenda</del>
+Retrospective - is a time at the end of a sprint that the team has for self-analysis.</p>
+
+<h3 id="participants-2">Participants</h3>
+<p>The Scrum team and product owner.</p>
+
+<h3 id="timebox-2">Timebox</h3>
+<p>Each team determines the time needed for the retrospective.
+*Recommendation: 1 hour for a two-week sprint and 6 members team.</p>
+
+<h3 id="purposes-1">Purposes:</h3>
+<ul>
+  <li>Brainstorming to generate new practices, ideas, and experiments that will help improve work;</li>
+  <li>Discussing the results of experiments, confirming or rejecting new practices;</li>
+  <li><del>Write down in a table what we have done well, what we have done poorly, and how we can fix it.</del>Sharing observations about the past sprint, identifying “weak points”. Each point should push the team towards actions that could improve their effectiveness.</li>
+</ul>
+
+<blockquote>
+  <p>Example observation: “In the last sprint, we added a task that was not related to the sprint goal. To avoid delaying the release, we had to rush the testing. Let’s discuss this case and create new rules to avoid situations like that one. We will test our new practice in the next sprint.”</p>
+</blockquote>
+
+<h2 id="️-sync-up">♻️ Sync-up</h2>
+<p>Sync-up is a regular meeting where a team discusses the current status and what needs to be done to move toward the sprint goal.</p>
+
+<blockquote>
+  <p>⚠️ If any questions require detailed consideration or answers during the meeting, an additional meeting is scheduled <strong>only</strong> for the interested parties.</p>
+</blockquote>
+
+<h3 id="participants-3">Participants</h3>
+<p>The Scrum team.</p>
+
+<h3 id="timebox-3">Timebox</h3>
+<p><strong>Up to</strong> 15 minutes.</p>
+
+<p>The frequency of sync-up meetings is determined by the Scrum team themselves. For example, it could be a daily or weekly sync.</p>
+
+<h2 id="-pitch">💡 Pitch</h2>
+<p>A pitch is a meeting where the organizer presents their idea for product improvement to interested parties.</p>
+
+<h3 id="participants-4">Participants</h3>
+<p>To be determined by the organizer.</p>
+
+<h3 id="timebox-4">Timebox</h3>
+<p><strong>Up to</strong> 30 minutes.</p>
+
+<h1 id="where-to-go-next-">Where to go next? 🛣</h1>
+<p>In my opinion, each team should have its own rules of the game, but it is always helpful to see how processes are organized in other teams. I hope you have learned something new for yourself, and on the next retrospective, you will share our experience with your team 🙌</p>
+
+    </div>
+  </div>
+</article>
+
+<div class="post-newsletter">
+  <section class="newsletter-section">
+  <div class="wrapper">
+    <div class="newsletter-card">
+      <div class="newsletter-icon"><svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></div>
+      <div class="newsletter-text">
+        <div class="featured-tag">✦ Newsletter</div>
+        <h3>The iOS Weekly Brief</h3>
+        <p>Every Friday: Apple and Swift news, hand-picked articles, and tools. A short, sharp briefing for iOS developers.</p>
+      </div>
+      <a class="btn-primary" href="https://iosweeklybrief.com/" target="_blank" rel="noopener">Subscribe →</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+  <footer>
+    <div class="wrapper">
+      <div class="footer-inner">
+        <span>© 2026 Vlad Khambir</span>
+        <a href="mailto:vlad.khambir@gmail.com">vlad.khambir@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
