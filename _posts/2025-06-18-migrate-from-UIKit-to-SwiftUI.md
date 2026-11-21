@@ -147,9 +147,3 @@ This approach will help you maintain accurate previews and avoid last-minute sur
 Migrating to SwiftUI is a big step, but with the right strategy, it becomes manageable. Start with subviews, build your foundation, and move step-by-step toward the full transition.
 
 Try creating your first SwiftUI component and wrapping it with `UIHostingController`. Migrate a simple screen. Build confidence, and let the team grow together with the framework.
-
-If you enjoyed this article and want to receive more practical tips like this, consider subscribing to The iOS Weekly Brief — my weekly Substack newsletter for iOS engineers. Every week, I share handpicked updates, tools, and insights from the iOS world, focused on real production needs.
-
-You can read it in 5 minutes and stay up to date without spending hours watching every video or reading every changelog.
-
-Join hundreds of iOS developers already following it: [vladkhambir.substack.com](https://vladkhambir.substack.com)

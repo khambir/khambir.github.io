@@ -111,9 +111,3 @@ AI becomes truly valuable when it is embedded into real engineering workflows, n
 By applying the **Agent Skills pattern from Claude** to development workflows, it is possible to build scalable, maintainable AI-powered tooling that respects context limits and integrates naturally into existing development processes.
 
 For teams working on large codebases, this approach offers a practical way to improve efficiency and consistency without sacrificing control or code quality.
-
-If you enjoyed this article and want to receive more practical tips like this, consider subscribing to [The iOS Weekly Brief](https://vladkhambir.substack.com) — my weekly Substack newsletter for engineers. Every week, I share handpicked updates, tools, and insights from the development world, focused on real production needs.
-
-You can read it in 5 minutes and stay up to date without spending hours watching every video or reading every changelog.
-
-Join hundreds of developers already following it: [vladkhambir.substack.com](https://vladkhambir.substack.com)
